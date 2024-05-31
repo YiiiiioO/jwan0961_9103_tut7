@@ -2,15 +2,16 @@ let imgDrwPrps = {aspect: 0, width: 0, height: 0, xOffset: 0, yOffset: 0};
 let canvasAspectRatio = 0;
 let numRandomthreeDRects; // 黄色线条上的矩形的数量
 let cam;
-let run2D = false;
+let run2D = true;
 let run3D = false;
-let clearall = true;
+let clearall = false;
 let elementcolors = [
   [219, 217, 213], // grey
   [75, 107, 186], // blue
   [230, 207, 48], // yellow
   [173, 58, 47] // yellow
 ];
+let yellow_ratio = 0.2
 
 
 function setup() {
@@ -276,481 +277,481 @@ function threeDartwork() {
   let threeDrect1X = imgDrwPrps.xOffset;
   let threeDrect1Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.024;
   let threeDrect1W = imgDrwPrps.width;
-  let threeDrect1H = imgDrwPrps.height * 0.02;
+  let threeDrect1H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect2X = imgDrwPrps.xOffset;
   let threeDrect2Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.16;
   let threeDrect2W = imgDrwPrps.width;
-  let threeDrect2H = imgDrwPrps.height * 0.02;
+  let threeDrect2H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect3X = imgDrwPrps.xOffset;
   let threeDrect3Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.35;
   let threeDrect3W = imgDrwPrps.width;
-  let threeDrect3H = imgDrwPrps.height * 0.02;
+  let threeDrect3H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect4X = imgDrwPrps.xOffset;
   let threeDrect4Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.43;
   let threeDrect4W = imgDrwPrps.width;
-  let threeDrect4H = imgDrwPrps.height * 0.02;
+  let threeDrect4H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect5X = imgDrwPrps.xOffset;
   let threeDrect5Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.56;
   let threeDrect5W = imgDrwPrps.width;
-  let threeDrect5H = imgDrwPrps.height * 0.02;
+  let threeDrect5H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect6X = imgDrwPrps.xOffset;
   let threeDrect6Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
   let threeDrect6W = imgDrwPrps.width;
-  let threeDrect6H = imgDrwPrps.height * 0.02;
+  let threeDrect6H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect7X = imgDrwPrps.xOffset;
   let threeDrect7Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.685;
   let threeDrect7W = imgDrwPrps.width * 0.06;
-  let threeDrect7H = imgDrwPrps.height * 0.02;
+  let threeDrect7H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect8X = imgDrwPrps.xOffset;
   let threeDrect8Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.775;
   let threeDrect8W = imgDrwPrps.width * 0.06;
-  let threeDrect8H = imgDrwPrps.height * 0.02;
+  let threeDrect8H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect9X = imgDrwPrps.xOffset;
   let threeDrect9Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.85;
   let threeDrect9W = imgDrwPrps.width;
-  let threeDrect9H = imgDrwPrps.height * 0.02;
+  let threeDrect9H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect10X = imgDrwPrps.xOffset;
   let threeDrect10Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.885;
   let threeDrect10W = imgDrwPrps.width * 0.06;
-  let threeDrect10H = imgDrwPrps.height * 0.02;
+  let threeDrect10H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect11X = imgDrwPrps.xOffset;
   let threeDrect11Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
   let threeDrect11W = imgDrwPrps.width;
-  let threeDrect11H = imgDrwPrps.height * 0.02;
+  let threeDrect11H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect12X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.08;
   let threeDrect12Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.725;
   let threeDrect12W = imgDrwPrps.width * 0.457;
-  let threeDrect12H = imgDrwPrps.height * 0.02;
+  let threeDrect12H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect13X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.862;
   let threeDrect13Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.805;
   let threeDrect13W = imgDrwPrps.width * 0.1;
-  let threeDrect13H = imgDrwPrps.height * 0.02;
+  let threeDrect13H = imgDrwPrps.height * yellow_ratio;
 
   
 
   // X轴上从左到右的黄色线条矩形
   let threeDrect14X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.025;
   let threeDrect14Y = imgDrwPrps.yOffset;
-  let threeDrect14W = imgDrwPrps.width * 0.02;
+  let threeDrect14W = imgDrwPrps.width * yellow_ratio;
   let threeDrect14H = imgDrwPrps.height * 0.35;
 
   let threeDrect15X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let threeDrect15Y = imgDrwPrps.yOffset;
-  let threeDrect15W = imgDrwPrps.width * 0.02;
+  let threeDrect15W = imgDrwPrps.width * yellow_ratio;
   let threeDrect15H = imgDrwPrps.height;
 
   let threeDrect16X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let threeDrect16Y = imgDrwPrps.yOffset;
-  let threeDrect16W = imgDrwPrps.width * 0.02;
+  let threeDrect16W = imgDrwPrps.width * yellow_ratio;
   let threeDrect16H = imgDrwPrps.height * 0.96;
 
   let threeDrect17X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let threeDrect17Y = imgDrwPrps.yOffset;
-  let threeDrect17W = imgDrwPrps.width * 0.02;
+  let threeDrect17W = imgDrwPrps.width * yellow_ratio;
   let threeDrect17H = imgDrwPrps.height;
 
   let threeDrect18X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let threeDrect18Y = imgDrwPrps.yOffset;
-  let threeDrect18W = imgDrwPrps.width * 0.02;
+  let threeDrect18W = imgDrwPrps.width * yellow_ratio;
   let threeDrect18H = imgDrwPrps.height;
 
   let threeDrect19X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let threeDrect19Y = imgDrwPrps.yOffset;
-  let threeDrect19W = imgDrwPrps.width * 0.02;
+  let threeDrect19W = imgDrwPrps.width * yellow_ratio;
   let threeDrect19H = imgDrwPrps.height;
 
   let threeDrect20X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let threeDrect20Y = imgDrwPrps.yOffset;
-  let threeDrect20W = imgDrwPrps.width * 0.02;
+  let threeDrect20W = imgDrwPrps.width * yellow_ratio;
   let threeDrect20H = imgDrwPrps.height;
 
   let threeDrect21X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.877;
   let threeDrect21Y = imgDrwPrps.yOffset;
-  let threeDrect21W = imgDrwPrps.width * 0.02;
+  let threeDrect21W = imgDrwPrps.width * yellow_ratio;
   let threeDrect21H = imgDrwPrps.height * 0.35;
 
   let threeDrect22X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.922;
   let threeDrect22Y = imgDrwPrps.yOffset;
-  let threeDrect22W = imgDrwPrps.width * 0.02;
+  let threeDrect22W = imgDrwPrps.width * yellow_ratio;
   let threeDrect22H = imgDrwPrps.height * 0.430;
 
   let threeDrect23X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let threeDrect23Y = imgDrwPrps.yOffset;
-  let threeDrect23W = imgDrwPrps.width * 0.02;
+  let threeDrect23W = imgDrwPrps.width * yellow_ratio;
   let threeDrect23H = imgDrwPrps.height;
 
   let threeDrect24X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.647;
   let threeDrect24Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.450;
-  let threeDrect24W = imgDrwPrps.width * 0.02;
+  let threeDrect24W = imgDrwPrps.width * yellow_ratio;
   let threeDrect24H = imgDrwPrps.height * 0.175;
 
   let threeDrect25X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.922;
   let threeDrect25Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.645;
-  let threeDrect25W = imgDrwPrps.width * 0.02;
+  let threeDrect25W = imgDrwPrps.width * yellow_ratio;
   let threeDrect25H = imgDrwPrps.height * 0.160;
 
   //固定的交叉处的正方形蓝色方块
   //第一行三个
   let threeDrect26X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.025;
   let threeDrect26Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.024;
-  let threeDrect26W = imgDrwPrps.width * 0.02;
-  let threeDrect26H = imgDrwPrps.height * 0.02;
+  let threeDrect26W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect26H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect27X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let threeDrect27Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.024;
-  let threeDrect27W = imgDrwPrps.width * 0.02;
-  let threeDrect27H = imgDrwPrps.height * 0.02;
+  let threeDrect27W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect27H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect28X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.922;
   let threeDrect28Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.024;
-  let threeDrect28W = imgDrwPrps.width * 0.02;
-  let threeDrect28H = imgDrwPrps.height * 0.02;
+  let threeDrect28W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect28H = imgDrwPrps.height * yellow_ratio;
 
   //第二行四个
   let threeDrect29X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let threeDrect29Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.160;
-  let threeDrect29W = imgDrwPrps.width * 0.02;
-  let threeDrect29H = imgDrwPrps.height * 0.02;
+  let threeDrect29W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect29H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect30X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let threeDrect30Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.160;
-  let threeDrect30W = imgDrwPrps.width * 0.02;
-  let threeDrect30H = imgDrwPrps.height * 0.02;
+  let threeDrect30W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect30H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect31X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let threeDrect31Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.160;
-  let threeDrect31W = imgDrwPrps.width * 0.02;
-  let threeDrect31H = imgDrwPrps.height * 0.02;
+  let threeDrect31W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect31H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect32X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let threeDrect32Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.160;
-  let threeDrect32W = imgDrwPrps.width * 0.02;
-  let threeDrect32H = imgDrwPrps.height * 0.02;
+  let threeDrect32W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect32H = imgDrwPrps.height * yellow_ratio;
 
   //第三行四个
   let threeDrect33X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let threeDrect33Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let threeDrect33W = imgDrwPrps.width * 0.02;
-  let threeDrect33H = imgDrwPrps.height * 0.02;
+  let threeDrect33W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect33H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect34X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let threeDrect34Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let threeDrect34W = imgDrwPrps.width * 0.02;
-  let threeDrect34H = imgDrwPrps.height * 0.02;
+  let threeDrect34W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect34H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect35X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let threeDrect35Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let threeDrect35W = imgDrwPrps.width * 0.02;
-  let threeDrect35H = imgDrwPrps.height * 0.02;
+  let threeDrect35W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect35H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect36X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let threeDrect36Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let threeDrect36W = imgDrwPrps.width * 0.02;
-  let threeDrect36H = imgDrwPrps.height * 0.02;
+  let threeDrect36W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect36H = imgDrwPrps.height * yellow_ratio;
 
   //第四行两个
   let threeDrect37X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let threeDrect37Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let threeDrect37W = imgDrwPrps.width * 0.02;
-  let threeDrect37H = imgDrwPrps.height * 0.02;
+  let threeDrect37W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect37H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect38X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let threeDrect38Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let threeDrect38W = imgDrwPrps.width * 0.02;
-  let threeDrect38H = imgDrwPrps.height * 0.02;
+  let threeDrect38W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect38H = imgDrwPrps.height * yellow_ratio;
 
   //第五行三个
   let threeDrect39X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let threeDrect39Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let threeDrect39W = imgDrwPrps.width * 0.02;
-  let threeDrect39H = imgDrwPrps.height * 0.02;
+  let threeDrect39W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect39H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect40X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let threeDrect40Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let threeDrect40W = imgDrwPrps.width * 0.02;
-  let threeDrect40H = imgDrwPrps.height * 0.02;
+  let threeDrect40W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect40H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect41X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let threeDrect41Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let threeDrect41W = imgDrwPrps.width * 0.02;
-  let threeDrect41H = imgDrwPrps.height * 0.02;
+  let threeDrect41W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect41H = imgDrwPrps.height * yellow_ratio;
 
   //第六行两个
   let threeDrect42X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let threeDrect42Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let threeDrect42W = imgDrwPrps.width * 0.02;
-  let threeDrect42H = imgDrwPrps.height * 0.02;
+  let threeDrect42W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect42H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect43X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let threeDrect43Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let threeDrect43W = imgDrwPrps.width * 0.02;
-  let threeDrect43H = imgDrwPrps.height * 0.02;
+  let threeDrect43W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect43H = imgDrwPrps.height * yellow_ratio;
 
   //第八行一个
   let threeDrect44X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let threeDrect44Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.725;
-  let threeDrect44W = imgDrwPrps.width * 0.02;
-  let threeDrect44H = imgDrwPrps.height * 0.02;
+  let threeDrect44W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect44H = imgDrwPrps.height * yellow_ratio;
   
   //第十行一个
   let threeDrect45X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let threeDrect45Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.805;
-  let threeDrect45W = imgDrwPrps.width * 0.02;
-  let threeDrect45H = imgDrwPrps.height * 0.02;
+  let threeDrect45W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect45H = imgDrwPrps.height * yellow_ratio;
 
   //第十一行四个
   let threeDrect46X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let threeDrect46Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let threeDrect46W = imgDrwPrps.width * 0.02;
-  let threeDrect46H = imgDrwPrps.height * 0.02;
+  let threeDrect46W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect46H = imgDrwPrps.height * yellow_ratio;
   
   let threeDrect47X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let threeDrect47Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let threeDrect47W = imgDrwPrps.width * 0.02;
-  let threeDrect47H = imgDrwPrps.height * 0.02;
+  let threeDrect47W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect47H = imgDrwPrps.height * yellow_ratio;
   
   let threeDrect48X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let threeDrect48Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let threeDrect48W = imgDrwPrps.width * 0.02;
-  let threeDrect48H = imgDrwPrps.height * 0.02;
+  let threeDrect48W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect48H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect49X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let threeDrect49Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let threeDrect49W = imgDrwPrps.width * 0.02;
-  let threeDrect49H = imgDrwPrps.height * 0.02;
+  let threeDrect49W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect49H = imgDrwPrps.height * yellow_ratio;
 
   //第十三行三个
   let threeDrect50X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let threeDrect50Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let threeDrect50W = imgDrwPrps.width * 0.02;
-  let threeDrect50H = imgDrwPrps.height * 0.02;
+  let threeDrect50W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect50H = imgDrwPrps.height * yellow_ratio;
   
   let threeDrect51X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let threeDrect51Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let threeDrect51W = imgDrwPrps.width * 0.02;
-  let threeDrect51H = imgDrwPrps.height * 0.02;
+  let threeDrect51W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect51H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect52X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let threeDrect52Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let threeDrect52W = imgDrwPrps.width * 0.02;
-  let threeDrect52H = imgDrwPrps.height * 0.02;
+  let threeDrect52W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect52H = imgDrwPrps.height * yellow_ratio;
 
 
   //固定的交叉处的正方形红色方块
   //第二行两个个
   let threeDrect53X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.025;
   let threeDrect53Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.160;
-  let threeDrect53W = imgDrwPrps.width * 0.02;
-  let threeDrect53H = imgDrwPrps.height * 0.02;
+  let threeDrect53W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect53H = imgDrwPrps.height * yellow_ratio;
   
   let threeDrect54X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let threeDrect54Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.160;
-  let threeDrect54W = imgDrwPrps.width * 0.02;
-  let threeDrect54H = imgDrwPrps.height * 0.02;
+  let threeDrect54W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect54H = imgDrwPrps.height * yellow_ratio;
 
   //第三行三个
   let threeDrect55X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.025;
   let threeDrect55Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let threeDrect55W = imgDrwPrps.width * 0.02;
-  let threeDrect55H = imgDrwPrps.height * 0.02;
+  let threeDrect55W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect55H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect56X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let threeDrect56Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let threeDrect56W = imgDrwPrps.width * 0.02;
-  let threeDrect56H = imgDrwPrps.height * 0.02;
+  let threeDrect56W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect56H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect57X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.877;
   let threeDrect57Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let threeDrect57W = imgDrwPrps.width * 0.02;
-  let threeDrect57H = imgDrwPrps.height * 0.02;
+  let threeDrect57W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect57H = imgDrwPrps.height * yellow_ratio;
 
   //第四行四个
   let threeDrect58X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let threeDrect58Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let threeDrect58W = imgDrwPrps.width * 0.02;
-  let threeDrect58H = imgDrwPrps.height * 0.02;
+  let threeDrect58W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect58H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect59X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let threeDrect59Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let threeDrect59W = imgDrwPrps.width * 0.02;
-  let threeDrect59H = imgDrwPrps.height * 0.02;
+  let threeDrect59W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect59H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect60X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.922;
   let threeDrect60Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let threeDrect60W = imgDrwPrps.width * 0.02;
-  let threeDrect60H = imgDrwPrps.height * 0.02;
+  let threeDrect60W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect60H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect61X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let threeDrect61Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let threeDrect61W = imgDrwPrps.width * 0.02;
-  let threeDrect61H = imgDrwPrps.height * 0.02;
+  let threeDrect61W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect61H = imgDrwPrps.height * yellow_ratio;
 
   //第五行三个
   let threeDrect62X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.647;
   let threeDrect62Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let threeDrect62W = imgDrwPrps.width * 0.02;
-  let threeDrect62H = imgDrwPrps.height * 0.02;
+  let threeDrect62W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect62H = imgDrwPrps.height * yellow_ratio;
   
   let threeDrect63X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let threeDrect63Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let threeDrect63W = imgDrwPrps.width * 0.02;
-  let threeDrect63H = imgDrwPrps.height * 0.02;
+  let threeDrect63W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect63H = imgDrwPrps.height * yellow_ratio;
   
   let threeDrect64X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let threeDrect64Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let threeDrect64W = imgDrwPrps.width * 0.02;
-  let threeDrect64H = imgDrwPrps.height * 0.02;
+  let threeDrect64W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect64H = imgDrwPrps.height * yellow_ratio;
 
   //第六行三个
   let threeDrect65X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let threeDrect65Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let threeDrect65W = imgDrwPrps.width * 0.02;
-  let threeDrect65H = imgDrwPrps.height * 0.02;
+  let threeDrect65W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect65H = imgDrwPrps.height * yellow_ratio;
   
   let threeDrect66X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let threeDrect66Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let threeDrect66W = imgDrwPrps.width * 0.02;
-  let threeDrect66H = imgDrwPrps.height * 0.02;
+  let threeDrect66W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect66H = imgDrwPrps.height * yellow_ratio;
   
   let threeDrect67X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let threeDrect67Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let threeDrect67W = imgDrwPrps.width * 0.02;
-  let threeDrect67H = imgDrwPrps.height * 0.02;
+  let threeDrect67W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect67H = imgDrwPrps.height * yellow_ratio;
 
   //第七行一个
   let threeDrect68X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let threeDrect68Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.685;
-  let threeDrect68W = imgDrwPrps.width * 0.02;
-  let threeDrect68H = imgDrwPrps.height * 0.02;
+  let threeDrect68W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect68H = imgDrwPrps.height * yellow_ratio;
 
   //第八行两个
   let threeDrect69X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let threeDrect69Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.725;
-  let threeDrect69W = imgDrwPrps.width * 0.02;
-  let threeDrect69H = imgDrwPrps.height * 0.02;
+  let threeDrect69W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect69H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect70X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let threeDrect70Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.725;
-  let threeDrect70W = imgDrwPrps.width * 0.02;
-  let threeDrect70H = imgDrwPrps.height * 0.02;
+  let threeDrect70W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect70H = imgDrwPrps.height * yellow_ratio;
 
   //第九行一个
   let threeDrect71X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let threeDrect71Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.775;
-  let threeDrect71W = imgDrwPrps.width * 0.02;
-  let threeDrect71H = imgDrwPrps.height * 0.02;
+  let threeDrect71W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect71H = imgDrwPrps.height * yellow_ratio;
 
   //第十行三个
   let threeDrect72X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let threeDrect72Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let threeDrect72W = imgDrwPrps.width * 0.02;
-  let threeDrect72H = imgDrwPrps.height * 0.02;
+  let threeDrect72W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect72H = imgDrwPrps.height * yellow_ratio;
   
   let threeDrect73X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let threeDrect73Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let threeDrect73W = imgDrwPrps.width * 0.02;
-  let threeDrect73H = imgDrwPrps.height * 0.02;
+  let threeDrect73W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect73H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect74X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let threeDrect74Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let threeDrect74W = imgDrwPrps.width * 0.02;
-  let threeDrect74H = imgDrwPrps.height * 0.02;
+  let threeDrect74W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect74H = imgDrwPrps.height * yellow_ratio;
 
   //第十三行两个
   let threeDrect75X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let threeDrect75Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let threeDrect75W = imgDrwPrps.width * 0.02;
-  let threeDrect75H = imgDrwPrps.height * 0.02;
+  let threeDrect75W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect75H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect76X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let threeDrect76Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let threeDrect76W = imgDrwPrps.width * 0.02;
-  let threeDrect76H = imgDrwPrps.height * 0.02;
+  let threeDrect76W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect76H = imgDrwPrps.height * yellow_ratio;
 
   //固定的交叉处的正方形灰色方块
   //第一行一个
   let threeDrect77X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.877;
   let threeDrect77Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.024;
-  let threeDrect77W = imgDrwPrps.width * 0.02;
-  let threeDrect77H = imgDrwPrps.height * 0.02;
+  let threeDrect77W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect77H = imgDrwPrps.height * yellow_ratio;
 
   //第三行三个
   let threeDrect78X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let threeDrect78Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let threeDrect78W = imgDrwPrps.width * 0.02;
-  let threeDrect78H = imgDrwPrps.height * 0.02;
+  let threeDrect78W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect78H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect79X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.922;
   let threeDrect79Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let threeDrect79W = imgDrwPrps.width * 0.02;
-  let threeDrect79H = imgDrwPrps.height * 0.02;
+  let threeDrect79W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect79H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect80X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let threeDrect80Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let threeDrect80W = imgDrwPrps.width * 0.02;
-  let threeDrect80H = imgDrwPrps.height * 0.02;
+  let threeDrect80W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect80H = imgDrwPrps.height * yellow_ratio;
   
   //第四行两个
   let threeDrect81X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let threeDrect81Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let threeDrect81W = imgDrwPrps.width * 0.02;
-  let threeDrect81H = imgDrwPrps.height * 0.02;
+  let threeDrect81W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect81H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect82X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let threeDrect82Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let threeDrect82W = imgDrwPrps.width * 0.02;
-  let threeDrect82H = imgDrwPrps.height * 0.02;
+  let threeDrect82W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect82H = imgDrwPrps.height * yellow_ratio;
 
   //第五行两个
   let threeDrect83X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let threeDrect83Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let threeDrect83W = imgDrwPrps.width * 0.02;
-  let threeDrect83H = imgDrwPrps.height * 0.02;
+  let threeDrect83W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect83H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect84X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let threeDrect84Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let threeDrect84W = imgDrwPrps.width * 0.02;
-  let threeDrect84H = imgDrwPrps.height * 0.02;
+  let threeDrect84W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect84H = imgDrwPrps.height * yellow_ratio;
 
   //第六行两个
   let threeDrect85X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let threeDrect85Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let threeDrect85W = imgDrwPrps.width * 0.02;
-  let threeDrect85H = imgDrwPrps.height * 0.02;
+  let threeDrect85W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect85H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect86X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let threeDrect86Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let threeDrect86W = imgDrwPrps.width * 0.02;
-  let threeDrect86H = imgDrwPrps.height * 0.02;
+  let threeDrect86W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect86H = imgDrwPrps.height * yellow_ratio;
 
   //第七行一个
   let threeDrect87X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let threeDrect87Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.725;
-  let threeDrect87W = imgDrwPrps.width * 0.02;
-  let threeDrect87H = imgDrwPrps.height * 0.02;
+  let threeDrect87W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect87H = imgDrwPrps.height * yellow_ratio;
 
   //第十三行两个
   let threeDrect88X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let threeDrect88Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let threeDrect88W = imgDrwPrps.width * 0.02;
-  let threeDrect88H = imgDrwPrps.height * 0.02;
+  let threeDrect88W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect88H = imgDrwPrps.height * yellow_ratio;
 
   let threeDrect89X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let threeDrect89Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let threeDrect89W = imgDrwPrps.width * 0.02;
-  let threeDrect89H = imgDrwPrps.height * 0.02;
+  let threeDrect89W = imgDrwPrps.width * yellow_ratio;
+  let threeDrect89H = imgDrwPrps.height * yellow_ratio;
 
   //固定的灰色矩形
   let threeDrect106X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.165;
@@ -1032,72 +1033,72 @@ function threeDartwork() {
   for (let i = 0; i < 2; i++) {
     let randX = threeDrect1X 
     let randY = threeDrect1Y 
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectr(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = threeDrect2X 
     let randY = threeDrect2Y 
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectr(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = threeDrect3X 
     let randY = threeDrect3Y 
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectr(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = threeDrect4X 
     let randY = threeDrect4Y 
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectr(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = threeDrect5X 
     let randY = threeDrect5Y 
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectr(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = threeDrect6X 
     let randY = threeDrect6Y 
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectr(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = threeDrect12X
     let randY = threeDrect12Y 
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectr(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = threeDrect11X
     let randY = threeDrect11Y
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectr(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = threeDrect17X
     let randY = threeDrect17Y 
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectr(randX, randY, randW, randH);
   }
 
@@ -1159,40 +1160,40 @@ function threeDartwork() {
   for (let i = 0; i < 3; i++) {
     let randX = threeDrect1X
     let randY = threeDrect1Y 
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectb(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = threeDrect4X 
     let randY = threeDrect4Y
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectb(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = threeDrect6X 
     let randY = threeDrect6Y 
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectb(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = threeDrect9X
     let randY = threeDrect9Y
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectb(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = threeDrect19X 
     let randY = threeDrect19Y 
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectb(randX, randY, randW, randH);
   }
 
@@ -1244,64 +1245,64 @@ function threeDartwork() {
   for (let i = 0; i < 3; i++) {
     let randX = threeDrect1X 
     let randY = threeDrect1Y
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectg(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 3; i++) {
     let randX = threeDrect2X
     let randY = threeDrect2Y 
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectg(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = threeDrect2X
     let randY = threeDrect2Y 
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectg(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = threeDrect3X 
     let randY = threeDrect3Y 
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectg(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = threeDrect9X 
     let randY = threeDrect9Y 
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectg(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = threeDrect15X 
     let randY = threeDrect15Y
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectg(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = threeDrect18X 
     let randY = threeDrect18Y
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectg(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 1; i++) {
     let randX = threeDrect19X 
     let randY = threeDrect19Y
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     threeDrectg(randX, randY, randW, randH);
   }
 
@@ -1351,481 +1352,481 @@ function artwork() {
   let rect1X = imgDrwPrps.xOffset;
   let rect1Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.024;
   let rect1W = imgDrwPrps.width;
-  let rect1H = imgDrwPrps.height * 0.02;
+  let rect1H = imgDrwPrps.height * yellow_ratio;
 
   let rect2X = imgDrwPrps.xOffset;
   let rect2Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.16;
   let rect2W = imgDrwPrps.width;
-  let rect2H = imgDrwPrps.height * 0.02;
+  let rect2H = imgDrwPrps.height * yellow_ratio;
 
   let rect3X = imgDrwPrps.xOffset;
   let rect3Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.35;
   let rect3W = imgDrwPrps.width;
-  let rect3H = imgDrwPrps.height * 0.02;
+  let rect3H = imgDrwPrps.height * yellow_ratio;
 
   let rect4X = imgDrwPrps.xOffset;
   let rect4Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.43;
   let rect4W = imgDrwPrps.width;
-  let rect4H = imgDrwPrps.height * 0.02;
+  let rect4H = imgDrwPrps.height * yellow_ratio;
 
   let rect5X = imgDrwPrps.xOffset;
   let rect5Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.56;
   let rect5W = imgDrwPrps.width;
-  let rect5H = imgDrwPrps.height * 0.02;
+  let rect5H = imgDrwPrps.height * yellow_ratio;
 
   let rect6X = imgDrwPrps.xOffset;
   let rect6Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
   let rect6W = imgDrwPrps.width;
-  let rect6H = imgDrwPrps.height * 0.02;
+  let rect6H = imgDrwPrps.height * yellow_ratio;
 
   let rect7X = imgDrwPrps.xOffset;
   let rect7Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.685;
   let rect7W = imgDrwPrps.width * 0.06;
-  let rect7H = imgDrwPrps.height * 0.02;
+  let rect7H = imgDrwPrps.height * yellow_ratio;
 
   let rect8X = imgDrwPrps.xOffset;
   let rect8Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.775;
   let rect8W = imgDrwPrps.width * 0.06;
-  let rect8H = imgDrwPrps.height * 0.02;
+  let rect8H = imgDrwPrps.height * yellow_ratio;
 
   let rect9X = imgDrwPrps.xOffset;
   let rect9Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.85;
   let rect9W = imgDrwPrps.width;
-  let rect9H = imgDrwPrps.height * 0.02;
+  let rect9H = imgDrwPrps.height * yellow_ratio;
 
   let rect10X = imgDrwPrps.xOffset;
   let rect10Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.885;
   let rect10W = imgDrwPrps.width * 0.06;
-  let rect10H = imgDrwPrps.height * 0.02;
+  let rect10H = imgDrwPrps.height * yellow_ratio;
 
   let rect11X = imgDrwPrps.xOffset;
   let rect11Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
   let rect11W = imgDrwPrps.width;
-  let rect11H = imgDrwPrps.height * 0.02;
+  let rect11H = imgDrwPrps.height * yellow_ratio;
 
   let rect12X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.08;
   let rect12Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.725;
   let rect12W = imgDrwPrps.width * 0.457;
-  let rect12H = imgDrwPrps.height * 0.02;
+  let rect12H = imgDrwPrps.height * yellow_ratio;
 
   let rect13X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.862;
   let rect13Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.805;
   let rect13W = imgDrwPrps.width * 0.1;
-  let rect13H = imgDrwPrps.height * 0.02;
+  let rect13H = imgDrwPrps.height * yellow_ratio;
 
   
 
   // X轴上从左到右的黄色线条矩形
   let rect14X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.025;
   let rect14Y = imgDrwPrps.yOffset;
-  let rect14W = imgDrwPrps.width * 0.02;
+  let rect14W = imgDrwPrps.width * yellow_ratio;
   let rect14H = imgDrwPrps.height * 0.35;
 
   let rect15X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect15Y = imgDrwPrps.yOffset;
-  let rect15W = imgDrwPrps.width * 0.02;
+  let rect15W = imgDrwPrps.width * yellow_ratio;
   let rect15H = imgDrwPrps.height;
 
   let rect16X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let rect16Y = imgDrwPrps.yOffset;
-  let rect16W = imgDrwPrps.width * 0.02;
+  let rect16W = imgDrwPrps.width * yellow_ratio;
   let rect16H = imgDrwPrps.height * 0.96;
 
   let rect17X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let rect17Y = imgDrwPrps.yOffset;
-  let rect17W = imgDrwPrps.width * 0.02;
+  let rect17W = imgDrwPrps.width * yellow_ratio;
   let rect17H = imgDrwPrps.height;
 
   let rect18X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let rect18Y = imgDrwPrps.yOffset;
-  let rect18W = imgDrwPrps.width * 0.02;
+  let rect18W = imgDrwPrps.width * yellow_ratio;
   let rect18H = imgDrwPrps.height;
 
   let rect19X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let rect19Y = imgDrwPrps.yOffset;
-  let rect19W = imgDrwPrps.width * 0.02;
+  let rect19W = imgDrwPrps.width * yellow_ratio;
   let rect19H = imgDrwPrps.height;
 
   let rect20X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect20Y = imgDrwPrps.yOffset;
-  let rect20W = imgDrwPrps.width * 0.02;
+  let rect20W = imgDrwPrps.width * yellow_ratio;
   let rect20H = imgDrwPrps.height;
 
   let rect21X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.877;
   let rect21Y = imgDrwPrps.yOffset;
-  let rect21W = imgDrwPrps.width * 0.02;
+  let rect21W = imgDrwPrps.width * yellow_ratio;
   let rect21H = imgDrwPrps.height * 0.35;
 
   let rect22X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.922;
   let rect22Y = imgDrwPrps.yOffset;
-  let rect22W = imgDrwPrps.width * 0.02;
+  let rect22W = imgDrwPrps.width * yellow_ratio;
   let rect22H = imgDrwPrps.height * 0.430;
 
   let rect23X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let rect23Y = imgDrwPrps.yOffset;
-  let rect23W = imgDrwPrps.width * 0.02;
+  let rect23W = imgDrwPrps.width * yellow_ratio;
   let rect23H = imgDrwPrps.height;
 
   let rect24X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.647;
   let rect24Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.450;
-  let rect24W = imgDrwPrps.width * 0.02;
+  let rect24W = imgDrwPrps.width * yellow_ratio;
   let rect24H = imgDrwPrps.height * 0.175;
 
   let rect25X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.922;
   let rect25Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.645;
-  let rect25W = imgDrwPrps.width * 0.02;
+  let rect25W = imgDrwPrps.width * yellow_ratio;
   let rect25H = imgDrwPrps.height * 0.160;
 
   //固定的交叉处的正方形蓝色方块
   //第一行三个
   let rect26X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.025;
   let rect26Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.024;
-  let rect26W = imgDrwPrps.width * 0.02;
-  let rect26H = imgDrwPrps.height * 0.02;
+  let rect26W = imgDrwPrps.width * yellow_ratio;
+  let rect26H = imgDrwPrps.height * yellow_ratio;
 
   let rect27X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect27Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.024;
-  let rect27W = imgDrwPrps.width * 0.02;
-  let rect27H = imgDrwPrps.height * 0.02;
+  let rect27W = imgDrwPrps.width * yellow_ratio;
+  let rect27H = imgDrwPrps.height * yellow_ratio;
 
   let rect28X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.922;
   let rect28Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.024;
-  let rect28W = imgDrwPrps.width * 0.02;
-  let rect28H = imgDrwPrps.height * 0.02;
+  let rect28W = imgDrwPrps.width * yellow_ratio;
+  let rect28H = imgDrwPrps.height * yellow_ratio;
 
   //第二行四个
   let rect29X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let rect29Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.160;
-  let rect29W = imgDrwPrps.width * 0.02;
-  let rect29H = imgDrwPrps.height * 0.02;
+  let rect29W = imgDrwPrps.width * yellow_ratio;
+  let rect29H = imgDrwPrps.height * yellow_ratio;
 
   let rect30X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let rect30Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.160;
-  let rect30W = imgDrwPrps.width * 0.02;
-  let rect30H = imgDrwPrps.height * 0.02;
+  let rect30W = imgDrwPrps.width * yellow_ratio;
+  let rect30H = imgDrwPrps.height * yellow_ratio;
 
   let rect31X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect31Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.160;
-  let rect31W = imgDrwPrps.width * 0.02;
-  let rect31H = imgDrwPrps.height * 0.02;
+  let rect31W = imgDrwPrps.width * yellow_ratio;
+  let rect31H = imgDrwPrps.height * yellow_ratio;
 
   let rect32X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let rect32Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.160;
-  let rect32W = imgDrwPrps.width * 0.02;
-  let rect32H = imgDrwPrps.height * 0.02;
+  let rect32W = imgDrwPrps.width * yellow_ratio;
+  let rect32H = imgDrwPrps.height * yellow_ratio;
 
   //第三行四个
   let rect33X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect33Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect33W = imgDrwPrps.width * 0.02;
-  let rect33H = imgDrwPrps.height * 0.02;
+  let rect33W = imgDrwPrps.width * yellow_ratio;
+  let rect33H = imgDrwPrps.height * yellow_ratio;
 
   let rect34X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let rect34Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect34W = imgDrwPrps.width * 0.02;
-  let rect34H = imgDrwPrps.height * 0.02;
+  let rect34W = imgDrwPrps.width * yellow_ratio;
+  let rect34H = imgDrwPrps.height * yellow_ratio;
 
   let rect35X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let rect35Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect35W = imgDrwPrps.width * 0.02;
-  let rect35H = imgDrwPrps.height * 0.02;
+  let rect35W = imgDrwPrps.width * yellow_ratio;
+  let rect35H = imgDrwPrps.height * yellow_ratio;
 
   let rect36X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect36Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect36W = imgDrwPrps.width * 0.02;
-  let rect36H = imgDrwPrps.height * 0.02;
+  let rect36W = imgDrwPrps.width * yellow_ratio;
+  let rect36H = imgDrwPrps.height * yellow_ratio;
 
   //第四行两个
   let rect37X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect37Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let rect37W = imgDrwPrps.width * 0.02;
-  let rect37H = imgDrwPrps.height * 0.02;
+  let rect37W = imgDrwPrps.width * yellow_ratio;
+  let rect37H = imgDrwPrps.height * yellow_ratio;
 
   let rect38X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let rect38Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let rect38W = imgDrwPrps.width * 0.02;
-  let rect38H = imgDrwPrps.height * 0.02;
+  let rect38W = imgDrwPrps.width * yellow_ratio;
+  let rect38H = imgDrwPrps.height * yellow_ratio;
 
   //第五行三个
   let rect39X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect39Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let rect39W = imgDrwPrps.width * 0.02;
-  let rect39H = imgDrwPrps.height * 0.02;
+  let rect39W = imgDrwPrps.width * yellow_ratio;
+  let rect39H = imgDrwPrps.height * yellow_ratio;
 
   let rect40X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let rect40Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let rect40W = imgDrwPrps.width * 0.02;
-  let rect40H = imgDrwPrps.height * 0.02;
+  let rect40W = imgDrwPrps.width * yellow_ratio;
+  let rect40H = imgDrwPrps.height * yellow_ratio;
 
   let rect41X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let rect41Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let rect41W = imgDrwPrps.width * 0.02;
-  let rect41H = imgDrwPrps.height * 0.02;
+  let rect41W = imgDrwPrps.width * yellow_ratio;
+  let rect41H = imgDrwPrps.height * yellow_ratio;
 
   //第六行两个
   let rect42X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let rect42Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let rect42W = imgDrwPrps.width * 0.02;
-  let rect42H = imgDrwPrps.height * 0.02;
+  let rect42W = imgDrwPrps.width * yellow_ratio;
+  let rect42H = imgDrwPrps.height * yellow_ratio;
 
   let rect43X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect43Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let rect43W = imgDrwPrps.width * 0.02;
-  let rect43H = imgDrwPrps.height * 0.02;
+  let rect43W = imgDrwPrps.width * yellow_ratio;
+  let rect43H = imgDrwPrps.height * yellow_ratio;
 
   //第八行一个
   let rect44X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let rect44Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.725;
-  let rect44W = imgDrwPrps.width * 0.02;
-  let rect44H = imgDrwPrps.height * 0.02;
+  let rect44W = imgDrwPrps.width * yellow_ratio;
+  let rect44H = imgDrwPrps.height * yellow_ratio;
   
   //第十行一个
   let rect45X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect45Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.805;
-  let rect45W = imgDrwPrps.width * 0.02;
-  let rect45H = imgDrwPrps.height * 0.02;
+  let rect45W = imgDrwPrps.width * yellow_ratio;
+  let rect45H = imgDrwPrps.height * yellow_ratio;
 
   //第十一行四个
   let rect46X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect46Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let rect46W = imgDrwPrps.width * 0.02;
-  let rect46H = imgDrwPrps.height * 0.02;
+  let rect46W = imgDrwPrps.width * yellow_ratio;
+  let rect46H = imgDrwPrps.height * yellow_ratio;
   
   let rect47X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let rect47Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let rect47W = imgDrwPrps.width * 0.02;
-  let rect47H = imgDrwPrps.height * 0.02;
+  let rect47W = imgDrwPrps.width * yellow_ratio;
+  let rect47H = imgDrwPrps.height * yellow_ratio;
   
   let rect48X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let rect48Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let rect48W = imgDrwPrps.width * 0.02;
-  let rect48H = imgDrwPrps.height * 0.02;
+  let rect48W = imgDrwPrps.width * yellow_ratio;
+  let rect48H = imgDrwPrps.height * yellow_ratio;
 
   let rect49X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let rect49Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let rect49W = imgDrwPrps.width * 0.02;
-  let rect49H = imgDrwPrps.height * 0.02;
+  let rect49W = imgDrwPrps.width * yellow_ratio;
+  let rect49H = imgDrwPrps.height * yellow_ratio;
 
   //第十三行三个
   let rect50X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let rect50Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let rect50W = imgDrwPrps.width * 0.02;
-  let rect50H = imgDrwPrps.height * 0.02;
+  let rect50W = imgDrwPrps.width * yellow_ratio;
+  let rect50H = imgDrwPrps.height * yellow_ratio;
   
   let rect51X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let rect51Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let rect51W = imgDrwPrps.width * 0.02;
-  let rect51H = imgDrwPrps.height * 0.02;
+  let rect51W = imgDrwPrps.width * yellow_ratio;
+  let rect51H = imgDrwPrps.height * yellow_ratio;
 
   let rect52X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect52Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let rect52W = imgDrwPrps.width * 0.02;
-  let rect52H = imgDrwPrps.height * 0.02;
+  let rect52W = imgDrwPrps.width * yellow_ratio;
+  let rect52H = imgDrwPrps.height * yellow_ratio;
 
 
   //固定的交叉处的正方形红色方块
   //第二行两个个
   let rect53X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.025;
   let rect53Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.160;
-  let rect53W = imgDrwPrps.width * 0.02;
-  let rect53H = imgDrwPrps.height * 0.02;
+  let rect53W = imgDrwPrps.width * yellow_ratio;
+  let rect53H = imgDrwPrps.height * yellow_ratio;
   
   let rect54X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let rect54Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.160;
-  let rect54W = imgDrwPrps.width * 0.02;
-  let rect54H = imgDrwPrps.height * 0.02;
+  let rect54W = imgDrwPrps.width * yellow_ratio;
+  let rect54H = imgDrwPrps.height * yellow_ratio;
 
   //第三行三个
   let rect55X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.025;
   let rect55Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect55W = imgDrwPrps.width * 0.02;
-  let rect55H = imgDrwPrps.height * 0.02;
+  let rect55W = imgDrwPrps.width * yellow_ratio;
+  let rect55H = imgDrwPrps.height * yellow_ratio;
 
   let rect56X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let rect56Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect56W = imgDrwPrps.width * 0.02;
-  let rect56H = imgDrwPrps.height * 0.02;
+  let rect56W = imgDrwPrps.width * yellow_ratio;
+  let rect56H = imgDrwPrps.height * yellow_ratio;
 
   let rect57X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.877;
   let rect57Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect57W = imgDrwPrps.width * 0.02;
-  let rect57H = imgDrwPrps.height * 0.02;
+  let rect57W = imgDrwPrps.width * yellow_ratio;
+  let rect57H = imgDrwPrps.height * yellow_ratio;
 
   //第四行四个
   let rect58X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let rect58Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let rect58W = imgDrwPrps.width * 0.02;
-  let rect58H = imgDrwPrps.height * 0.02;
+  let rect58W = imgDrwPrps.width * yellow_ratio;
+  let rect58H = imgDrwPrps.height * yellow_ratio;
 
   let rect59X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect59Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let rect59W = imgDrwPrps.width * 0.02;
-  let rect59H = imgDrwPrps.height * 0.02;
+  let rect59W = imgDrwPrps.width * yellow_ratio;
+  let rect59H = imgDrwPrps.height * yellow_ratio;
 
   let rect60X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.922;
   let rect60Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let rect60W = imgDrwPrps.width * 0.02;
-  let rect60H = imgDrwPrps.height * 0.02;
+  let rect60W = imgDrwPrps.width * yellow_ratio;
+  let rect60H = imgDrwPrps.height * yellow_ratio;
 
   let rect61X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let rect61Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let rect61W = imgDrwPrps.width * 0.02;
-  let rect61H = imgDrwPrps.height * 0.02;
+  let rect61W = imgDrwPrps.width * yellow_ratio;
+  let rect61H = imgDrwPrps.height * yellow_ratio;
 
   //第五行三个
   let rect62X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.647;
   let rect62Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let rect62W = imgDrwPrps.width * 0.02;
-  let rect62H = imgDrwPrps.height * 0.02;
+  let rect62W = imgDrwPrps.width * yellow_ratio;
+  let rect62H = imgDrwPrps.height * yellow_ratio;
   
   let rect63X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect63Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let rect63W = imgDrwPrps.width * 0.02;
-  let rect63H = imgDrwPrps.height * 0.02;
+  let rect63W = imgDrwPrps.width * yellow_ratio;
+  let rect63H = imgDrwPrps.height * yellow_ratio;
   
   let rect64X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let rect64Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let rect64W = imgDrwPrps.width * 0.02;
-  let rect64H = imgDrwPrps.height * 0.02;
+  let rect64W = imgDrwPrps.width * yellow_ratio;
+  let rect64H = imgDrwPrps.height * yellow_ratio;
 
   //第六行三个
   let rect65X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect65Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let rect65W = imgDrwPrps.width * 0.02;
-  let rect65H = imgDrwPrps.height * 0.02;
+  let rect65W = imgDrwPrps.width * yellow_ratio;
+  let rect65H = imgDrwPrps.height * yellow_ratio;
   
   let rect66X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let rect66Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let rect66W = imgDrwPrps.width * 0.02;
-  let rect66H = imgDrwPrps.height * 0.02;
+  let rect66W = imgDrwPrps.width * yellow_ratio;
+  let rect66H = imgDrwPrps.height * yellow_ratio;
   
   let rect67X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let rect67Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let rect67W = imgDrwPrps.width * 0.02;
-  let rect67H = imgDrwPrps.height * 0.02;
+  let rect67W = imgDrwPrps.width * yellow_ratio;
+  let rect67H = imgDrwPrps.height * yellow_ratio;
 
   //第七行一个
   let rect68X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect68Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.685;
-  let rect68W = imgDrwPrps.width * 0.02;
-  let rect68H = imgDrwPrps.height * 0.02;
+  let rect68W = imgDrwPrps.width * yellow_ratio;
+  let rect68H = imgDrwPrps.height * yellow_ratio;
 
   //第八行两个
   let rect69X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect69Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.725;
-  let rect69W = imgDrwPrps.width * 0.02;
-  let rect69H = imgDrwPrps.height * 0.02;
+  let rect69W = imgDrwPrps.width * yellow_ratio;
+  let rect69H = imgDrwPrps.height * yellow_ratio;
 
   let rect70X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let rect70Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.725;
-  let rect70W = imgDrwPrps.width * 0.02;
-  let rect70H = imgDrwPrps.height * 0.02;
+  let rect70W = imgDrwPrps.width * yellow_ratio;
+  let rect70H = imgDrwPrps.height * yellow_ratio;
 
   //第九行一个
   let rect71X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect71Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.775;
-  let rect71W = imgDrwPrps.width * 0.02;
-  let rect71H = imgDrwPrps.height * 0.02;
+  let rect71W = imgDrwPrps.width * yellow_ratio;
+  let rect71H = imgDrwPrps.height * yellow_ratio;
 
   //第十行三个
   let rect72X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let rect72Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let rect72W = imgDrwPrps.width * 0.02;
-  let rect72H = imgDrwPrps.height * 0.02;
+  let rect72W = imgDrwPrps.width * yellow_ratio;
+  let rect72H = imgDrwPrps.height * yellow_ratio;
   
   let rect73X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect73Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let rect73W = imgDrwPrps.width * 0.02;
-  let rect73H = imgDrwPrps.height * 0.02;
+  let rect73W = imgDrwPrps.width * yellow_ratio;
+  let rect73H = imgDrwPrps.height * yellow_ratio;
 
   let rect74X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let rect74Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let rect74W = imgDrwPrps.width * 0.02;
-  let rect74H = imgDrwPrps.height * 0.02;
+  let rect74W = imgDrwPrps.width * yellow_ratio;
+  let rect74H = imgDrwPrps.height * yellow_ratio;
 
   //第十三行两个
   let rect75X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect75Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let rect75W = imgDrwPrps.width * 0.02;
-  let rect75H = imgDrwPrps.height * 0.02;
+  let rect75W = imgDrwPrps.width * yellow_ratio;
+  let rect75H = imgDrwPrps.height * yellow_ratio;
 
   let rect76X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let rect76Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let rect76W = imgDrwPrps.width * 0.02;
-  let rect76H = imgDrwPrps.height * 0.02;
+  let rect76W = imgDrwPrps.width * yellow_ratio;
+  let rect76H = imgDrwPrps.height * yellow_ratio;
 
   //固定的交叉处的正方形灰色方块
   //第一行一个
   let rect77X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.877;
   let rect77Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.024;
-  let rect77W = imgDrwPrps.width * 0.02;
-  let rect77H = imgDrwPrps.height * 0.02;
+  let rect77W = imgDrwPrps.width * yellow_ratio;
+  let rect77H = imgDrwPrps.height * yellow_ratio;
 
   //第三行三个
   let rect78X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let rect78Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect78W = imgDrwPrps.width * 0.02;
-  let rect78H = imgDrwPrps.height * 0.02;
+  let rect78W = imgDrwPrps.width * yellow_ratio;
+  let rect78H = imgDrwPrps.height * yellow_ratio;
 
   let rect79X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.922;
   let rect79Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect79W = imgDrwPrps.width * 0.02;
-  let rect79H = imgDrwPrps.height * 0.02;
+  let rect79W = imgDrwPrps.width * yellow_ratio;
+  let rect79H = imgDrwPrps.height * yellow_ratio;
 
   let rect80X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let rect80Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect80W = imgDrwPrps.width * 0.02;
-  let rect80H = imgDrwPrps.height * 0.02;
+  let rect80W = imgDrwPrps.width * yellow_ratio;
+  let rect80H = imgDrwPrps.height * yellow_ratio;
   
   //第四行两个
   let rect81X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let rect81Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let rect81W = imgDrwPrps.width * 0.02;
-  let rect81H = imgDrwPrps.height * 0.02;
+  let rect81W = imgDrwPrps.width * yellow_ratio;
+  let rect81H = imgDrwPrps.height * yellow_ratio;
 
   let rect82X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let rect82Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let rect82W = imgDrwPrps.width * 0.02;
-  let rect82H = imgDrwPrps.height * 0.02;
+  let rect82W = imgDrwPrps.width * yellow_ratio;
+  let rect82H = imgDrwPrps.height * yellow_ratio;
 
   //第五行两个
   let rect83X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let rect83Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let rect83W = imgDrwPrps.width * 0.02;
-  let rect83H = imgDrwPrps.height * 0.02;
+  let rect83W = imgDrwPrps.width * yellow_ratio;
+  let rect83H = imgDrwPrps.height * yellow_ratio;
 
   let rect84X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let rect84Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let rect84W = imgDrwPrps.width * 0.02;
-  let rect84H = imgDrwPrps.height * 0.02;
+  let rect84W = imgDrwPrps.width * yellow_ratio;
+  let rect84H = imgDrwPrps.height * yellow_ratio;
 
   //第六行两个
   let rect85X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let rect85Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let rect85W = imgDrwPrps.width * 0.02;
-  let rect85H = imgDrwPrps.height * 0.02;
+  let rect85W = imgDrwPrps.width * yellow_ratio;
+  let rect85H = imgDrwPrps.height * yellow_ratio;
 
   let rect86X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let rect86Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let rect86W = imgDrwPrps.width * 0.02;
-  let rect86H = imgDrwPrps.height * 0.02;
+  let rect86W = imgDrwPrps.width * yellow_ratio;
+  let rect86H = imgDrwPrps.height * yellow_ratio;
 
   //第七行一个
   let rect87X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let rect87Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.725;
-  let rect87W = imgDrwPrps.width * 0.02;
-  let rect87H = imgDrwPrps.height * 0.02;
+  let rect87W = imgDrwPrps.width * yellow_ratio;
+  let rect87H = imgDrwPrps.height * yellow_ratio;
 
   //第十三行两个
   let rect88X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let rect88Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let rect88W = imgDrwPrps.width * 0.02;
-  let rect88H = imgDrwPrps.height * 0.02;
+  let rect88W = imgDrwPrps.width * yellow_ratio;
+  let rect88H = imgDrwPrps.height * yellow_ratio;
 
   let rect89X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let rect89Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let rect89W = imgDrwPrps.width * 0.02;
-  let rect89H = imgDrwPrps.height * 0.02;
+  let rect89W = imgDrwPrps.width * yellow_ratio;
+  let rect89H = imgDrwPrps.height * yellow_ratio;
 
   //固定的灰色矩形
   let rect106X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.165;
@@ -2107,72 +2108,72 @@ function artwork() {
   for (let i = 0; i < 2; i++) {
     let randX = rect1X + random(imgDrwPrps.width * 0.045, imgDrwPrps.width * 0.822);
     let randY = rect1Y + random(0, rect1H - (imgDrwPrps.height * 0.02));
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect2X + random(imgDrwPrps.width * 0.135, imgDrwPrps.width * 0.517);
     let randY = rect2Y + random(0, rect2H - (imgDrwPrps.height * 0.02));
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect3X + random(imgDrwPrps.width * 0.597, imgDrwPrps.width * 0.822);
     let randY = rect3Y + random(0, rect3H - (imgDrwPrps.height * 0.02));
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect4X + random(imgDrwPrps.width * 0.245, imgDrwPrps.width * 0.387);
     let randY = rect4Y + random(0, rect4H - (imgDrwPrps.height * 0.02));
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect5X + random(imgDrwPrps.width * 0.245, imgDrwPrps.width * 0.517);
     let randY = rect5Y + random(0, rect5H - (imgDrwPrps.height * 0.02));
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect6X + random(imgDrwPrps.width * 0.597, imgDrwPrps.width * 0.822);
     let randY = rect6Y + random(0, rect6H - (imgDrwPrps.height * 0.02));
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect12X + random(imgDrwPrps.width * 0.165, imgDrwPrps.width * 0.437);
     let randY = rect12Y + random(0, rect12H - (imgDrwPrps.height * 0.02));
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect11X + random(imgDrwPrps.width * 0.597, imgDrwPrps.width * 0.822);
     let randY = rect11Y + random(0, rect11H - (imgDrwPrps.height * 0.02));
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect17X +random(0, rect17W - (imgDrwPrps.width * 0.02));
     let randY = rect17Y + random(imgDrwPrps.width * 0.18, imgDrwPrps.width * 0.33);
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
@@ -2234,40 +2235,40 @@ function artwork() {
   for (let i = 0; i < 3; i++) {
     let randX = rect1X + random(imgDrwPrps.width * 0.045, imgDrwPrps.width * 0.822);
     let randY = rect1Y + random(0, rect1H - (imgDrwPrps.height * 0.02));
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect4X + random(imgDrwPrps.width * 0.597, imgDrwPrps.width * 0.822);
     let randY = rect4Y + random(0, rect4H - (imgDrwPrps.height * 0.02));
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect6X + random(imgDrwPrps.width * 0.245, imgDrwPrps.width * 0.517);
     let randY = rect6Y + random(0, rect6H - (imgDrwPrps.height * 0.02));
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect9X + random(imgDrwPrps.width * 0.597, imgDrwPrps.width * 0.822);
     let randY = rect9Y + random(0, rect9H - (imgDrwPrps.height * 0.02));
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect19X +random(0, rect17W - (imgDrwPrps.width * 0.02));
     let randY = rect19Y + random(imgDrwPrps.width * 0.645, imgDrwPrps.width * 0.83);
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
@@ -2319,64 +2320,64 @@ function artwork() {
   for (let i = 0; i < 3; i++) {
     let randX = rect1X + random(imgDrwPrps.width * 0.045, imgDrwPrps.width * 0.822);
     let randY = rect1Y + random(0, rect1H - (imgDrwPrps.height * 0.02));
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 3; i++) {
     let randX = rect2X + random(imgDrwPrps.width * 0.135, imgDrwPrps.width * 0.517);
     let randY = rect2Y + random(0, rect2H - (imgDrwPrps.height * 0.02));
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect2X + random(imgDrwPrps.width * 0.597, imgDrwPrps.width * 0.822);
     let randY = rect2Y + random(0, rect2H - (imgDrwPrps.height * 0.02));
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect3X + random(imgDrwPrps.width * 0.245, imgDrwPrps.width * 0.517);
     let randY = rect3Y + random(0, rect3H - (imgDrwPrps.height * 0.02));
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect9X + random(imgDrwPrps.width * 0.245, imgDrwPrps.width * 0.517);
     let randY = rect9Y + random(0, rect9H - (imgDrwPrps.height * 0.02));
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect15X +random(0, rect15W - (imgDrwPrps.width * 0.02));
     let randY = rect15Y + random(imgDrwPrps.width * 0.044, imgDrwPrps.width * 0.33);
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect18X +random(0, rect18W - (imgDrwPrps.width * 0.02));
     let randY = rect18Y + random(imgDrwPrps.width * 0.18, imgDrwPrps.width * 0.33);
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 1; i++) {
     let randX = rect19X +random(0, rect17W - (imgDrwPrps.width * 0.02));
     let randY = rect19Y + random(imgDrwPrps.width * 0.18, imgDrwPrps.width * 0.33);
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
@@ -2426,481 +2427,481 @@ function clearartwork() {
   let rect1X = imgDrwPrps.xOffset;
   let rect1Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.024;
   let rect1W = imgDrwPrps.width;
-  let rect1H = imgDrwPrps.height * 0.02;
+  let rect1H = imgDrwPrps.height * yellow_ratio;
 
   let rect2X = imgDrwPrps.xOffset;
   let rect2Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.16;
   let rect2W = imgDrwPrps.width;
-  let rect2H = imgDrwPrps.height * 0.02;
+  let rect2H = imgDrwPrps.height * yellow_ratio;
 
   let rect3X = imgDrwPrps.xOffset;
   let rect3Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.35;
   let rect3W = imgDrwPrps.width;
-  let rect3H = imgDrwPrps.height * 0.02;
+  let rect3H = imgDrwPrps.height * yellow_ratio;
 
   let rect4X = imgDrwPrps.xOffset;
   let rect4Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.43;
   let rect4W = imgDrwPrps.width;
-  let rect4H = imgDrwPrps.height * 0.02;
+  let rect4H = imgDrwPrps.height * yellow_ratio;
 
   let rect5X = imgDrwPrps.xOffset;
   let rect5Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.56;
   let rect5W = imgDrwPrps.width;
-  let rect5H = imgDrwPrps.height * 0.02;
+  let rect5H = imgDrwPrps.height * yellow_ratio;
 
   let rect6X = imgDrwPrps.xOffset;
   let rect6Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
   let rect6W = imgDrwPrps.width;
-  let rect6H = imgDrwPrps.height * 0.02;
+  let rect6H = imgDrwPrps.height * yellow_ratio;
 
   let rect7X = imgDrwPrps.xOffset;
   let rect7Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.685;
   let rect7W = imgDrwPrps.width * 0.06;
-  let rect7H = imgDrwPrps.height * 0.02;
+  let rect7H = imgDrwPrps.height * yellow_ratio;
 
   let rect8X = imgDrwPrps.xOffset;
   let rect8Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.775;
   let rect8W = imgDrwPrps.width * 0.06;
-  let rect8H = imgDrwPrps.height * 0.02;
+  let rect8H = imgDrwPrps.height * yellow_ratio;
 
   let rect9X = imgDrwPrps.xOffset;
   let rect9Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.85;
   let rect9W = imgDrwPrps.width;
-  let rect9H = imgDrwPrps.height * 0.02;
+  let rect9H = imgDrwPrps.height * yellow_ratio;
 
   let rect10X = imgDrwPrps.xOffset;
   let rect10Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.885;
   let rect10W = imgDrwPrps.width * 0.06;
-  let rect10H = imgDrwPrps.height * 0.02;
+  let rect10H = imgDrwPrps.height * yellow_ratio;
 
   let rect11X = imgDrwPrps.xOffset;
   let rect11Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
   let rect11W = imgDrwPrps.width;
-  let rect11H = imgDrwPrps.height * 0.02;
+  let rect11H = imgDrwPrps.height * yellow_ratio;
 
   let rect12X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.08;
   let rect12Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.725;
   let rect12W = imgDrwPrps.width * 0.457;
-  let rect12H = imgDrwPrps.height * 0.02;
+  let rect12H = imgDrwPrps.height * yellow_ratio;
 
   let rect13X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.862;
   let rect13Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.805;
   let rect13W = imgDrwPrps.width * 0.1;
-  let rect13H = imgDrwPrps.height * 0.02;
+  let rect13H = imgDrwPrps.height * yellow_ratio;
 
   
 
   // X轴上从左到右的黄色线条矩形
   let rect14X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.025;
   let rect14Y = imgDrwPrps.yOffset;
-  let rect14W = imgDrwPrps.width * 0.02;
+  let rect14W = imgDrwPrps.width * yellow_ratio;
   let rect14H = imgDrwPrps.height * 0.35;
 
   let rect15X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect15Y = imgDrwPrps.yOffset;
-  let rect15W = imgDrwPrps.width * 0.02;
+  let rect15W = imgDrwPrps.width * yellow_ratio;
   let rect15H = imgDrwPrps.height;
 
   let rect16X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let rect16Y = imgDrwPrps.yOffset;
-  let rect16W = imgDrwPrps.width * 0.02;
+  let rect16W = imgDrwPrps.width * yellow_ratio;
   let rect16H = imgDrwPrps.height * 0.96;
 
   let rect17X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let rect17Y = imgDrwPrps.yOffset;
-  let rect17W = imgDrwPrps.width * 0.02;
+  let rect17W = imgDrwPrps.width * yellow_ratio;
   let rect17H = imgDrwPrps.height;
 
   let rect18X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let rect18Y = imgDrwPrps.yOffset;
-  let rect18W = imgDrwPrps.width * 0.02;
+  let rect18W = imgDrwPrps.width * yellow_ratio;
   let rect18H = imgDrwPrps.height;
 
   let rect19X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let rect19Y = imgDrwPrps.yOffset;
-  let rect19W = imgDrwPrps.width * 0.02;
+  let rect19W = imgDrwPrps.width * yellow_ratio;
   let rect19H = imgDrwPrps.height;
 
   let rect20X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect20Y = imgDrwPrps.yOffset;
-  let rect20W = imgDrwPrps.width * 0.02;
+  let rect20W = imgDrwPrps.width * yellow_ratio;
   let rect20H = imgDrwPrps.height;
 
   let rect21X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.877;
   let rect21Y = imgDrwPrps.yOffset;
-  let rect21W = imgDrwPrps.width * 0.02;
+  let rect21W = imgDrwPrps.width * yellow_ratio;
   let rect21H = imgDrwPrps.height * 0.35;
 
   let rect22X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.922;
   let rect22Y = imgDrwPrps.yOffset;
-  let rect22W = imgDrwPrps.width * 0.02;
+  let rect22W = imgDrwPrps.width * yellow_ratio;
   let rect22H = imgDrwPrps.height * 0.430;
 
   let rect23X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let rect23Y = imgDrwPrps.yOffset;
-  let rect23W = imgDrwPrps.width * 0.02;
+  let rect23W = imgDrwPrps.width * yellow_ratio;
   let rect23H = imgDrwPrps.height;
 
   let rect24X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.647;
   let rect24Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.450;
-  let rect24W = imgDrwPrps.width * 0.02;
+  let rect24W = imgDrwPrps.width * yellow_ratio;
   let rect24H = imgDrwPrps.height * 0.175;
 
   let rect25X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.922;
   let rect25Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.645;
-  let rect25W = imgDrwPrps.width * 0.02;
+  let rect25W = imgDrwPrps.width * yellow_ratio;
   let rect25H = imgDrwPrps.height * 0.160;
 
   //固定的交叉处的正方形蓝色方块
   //第一行三个
   let rect26X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.025;
   let rect26Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.024;
-  let rect26W = imgDrwPrps.width * 0.02;
-  let rect26H = imgDrwPrps.height * 0.02;
+  let rect26W = imgDrwPrps.width * yellow_ratio;
+  let rect26H = imgDrwPrps.height * yellow_ratio;
 
   let rect27X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect27Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.024;
-  let rect27W = imgDrwPrps.width * 0.02;
-  let rect27H = imgDrwPrps.height * 0.02;
+  let rect27W = imgDrwPrps.width * yellow_ratio;
+  let rect27H = imgDrwPrps.height * yellow_ratio;
 
   let rect28X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.922;
   let rect28Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.024;
-  let rect28W = imgDrwPrps.width * 0.02;
-  let rect28H = imgDrwPrps.height * 0.02;
+  let rect28W = imgDrwPrps.width * yellow_ratio;
+  let rect28H = imgDrwPrps.height * yellow_ratio;
 
   //第二行四个
   let rect29X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let rect29Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.160;
-  let rect29W = imgDrwPrps.width * 0.02;
-  let rect29H = imgDrwPrps.height * 0.02;
+  let rect29W = imgDrwPrps.width * yellow_ratio;
+  let rect29H = imgDrwPrps.height * yellow_ratio;
 
   let rect30X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let rect30Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.160;
-  let rect30W = imgDrwPrps.width * 0.02;
-  let rect30H = imgDrwPrps.height * 0.02;
+  let rect30W = imgDrwPrps.width * yellow_ratio;
+  let rect30H = imgDrwPrps.height * yellow_ratio;
 
   let rect31X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect31Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.160;
-  let rect31W = imgDrwPrps.width * 0.02;
-  let rect31H = imgDrwPrps.height * 0.02;
+  let rect31W = imgDrwPrps.width * yellow_ratio;
+  let rect31H = imgDrwPrps.height * yellow_ratio;
 
   let rect32X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let rect32Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.160;
-  let rect32W = imgDrwPrps.width * 0.02;
-  let rect32H = imgDrwPrps.height * 0.02;
+  let rect32W = imgDrwPrps.width * yellow_ratio;
+  let rect32H = imgDrwPrps.height * yellow_ratio;
 
   //第三行四个
   let rect33X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect33Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect33W = imgDrwPrps.width * 0.02;
-  let rect33H = imgDrwPrps.height * 0.02;
+  let rect33W = imgDrwPrps.width * yellow_ratio;
+  let rect33H = imgDrwPrps.height * yellow_ratio;
 
   let rect34X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let rect34Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect34W = imgDrwPrps.width * 0.02;
-  let rect34H = imgDrwPrps.height * 0.02;
+  let rect34W = imgDrwPrps.width * yellow_ratio;
+  let rect34H = imgDrwPrps.height * yellow_ratio;
 
   let rect35X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let rect35Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect35W = imgDrwPrps.width * 0.02;
-  let rect35H = imgDrwPrps.height * 0.02;
+  let rect35W = imgDrwPrps.width * yellow_ratio;
+  let rect35H = imgDrwPrps.height * yellow_ratio;
 
   let rect36X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect36Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect36W = imgDrwPrps.width * 0.02;
-  let rect36H = imgDrwPrps.height * 0.02;
+  let rect36W = imgDrwPrps.width * yellow_ratio;
+  let rect36H = imgDrwPrps.height * yellow_ratio;
 
   //第四行两个
   let rect37X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect37Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let rect37W = imgDrwPrps.width * 0.02;
-  let rect37H = imgDrwPrps.height * 0.02;
+  let rect37W = imgDrwPrps.width * yellow_ratio;
+  let rect37H = imgDrwPrps.height * yellow_ratio;
 
   let rect38X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let rect38Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let rect38W = imgDrwPrps.width * 0.02;
-  let rect38H = imgDrwPrps.height * 0.02;
+  let rect38W = imgDrwPrps.width * yellow_ratio;
+  let rect38H = imgDrwPrps.height * yellow_ratio;
 
   //第五行三个
   let rect39X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect39Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let rect39W = imgDrwPrps.width * 0.02;
-  let rect39H = imgDrwPrps.height * 0.02;
+  let rect39W = imgDrwPrps.width * yellow_ratio;
+  let rect39H = imgDrwPrps.height * yellow_ratio;
 
   let rect40X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let rect40Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let rect40W = imgDrwPrps.width * 0.02;
-  let rect40H = imgDrwPrps.height * 0.02;
+  let rect40W = imgDrwPrps.width * yellow_ratio;
+  let rect40H = imgDrwPrps.height * yellow_ratio;
 
   let rect41X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let rect41Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let rect41W = imgDrwPrps.width * 0.02;
-  let rect41H = imgDrwPrps.height * 0.02;
+  let rect41W = imgDrwPrps.width * yellow_ratio;
+  let rect41H = imgDrwPrps.height * yellow_ratio;
 
   //第六行两个
   let rect42X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let rect42Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let rect42W = imgDrwPrps.width * 0.02;
-  let rect42H = imgDrwPrps.height * 0.02;
+  let rect42W = imgDrwPrps.width * yellow_ratio;
+  let rect42H = imgDrwPrps.height * yellow_ratio;
 
   let rect43X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect43Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let rect43W = imgDrwPrps.width * 0.02;
-  let rect43H = imgDrwPrps.height * 0.02;
+  let rect43W = imgDrwPrps.width * yellow_ratio;
+  let rect43H = imgDrwPrps.height * yellow_ratio;
 
   //第八行一个
   let rect44X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let rect44Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.725;
-  let rect44W = imgDrwPrps.width * 0.02;
-  let rect44H = imgDrwPrps.height * 0.02;
+  let rect44W = imgDrwPrps.width * yellow_ratio;
+  let rect44H = imgDrwPrps.height * yellow_ratio;
   
   //第十行一个
   let rect45X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect45Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.805;
-  let rect45W = imgDrwPrps.width * 0.02;
-  let rect45H = imgDrwPrps.height * 0.02;
+  let rect45W = imgDrwPrps.width * yellow_ratio;
+  let rect45H = imgDrwPrps.height * yellow_ratio;
 
   //第十一行四个
   let rect46X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect46Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let rect46W = imgDrwPrps.width * 0.02;
-  let rect46H = imgDrwPrps.height * 0.02;
+  let rect46W = imgDrwPrps.width * yellow_ratio;
+  let rect46H = imgDrwPrps.height * yellow_ratio;
   
   let rect47X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let rect47Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let rect47W = imgDrwPrps.width * 0.02;
-  let rect47H = imgDrwPrps.height * 0.02;
+  let rect47W = imgDrwPrps.width * yellow_ratio;
+  let rect47H = imgDrwPrps.height * yellow_ratio;
   
   let rect48X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let rect48Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let rect48W = imgDrwPrps.width * 0.02;
-  let rect48H = imgDrwPrps.height * 0.02;
+  let rect48W = imgDrwPrps.width * yellow_ratio;
+  let rect48H = imgDrwPrps.height * yellow_ratio;
 
   let rect49X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let rect49Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let rect49W = imgDrwPrps.width * 0.02;
-  let rect49H = imgDrwPrps.height * 0.02;
+  let rect49W = imgDrwPrps.width * yellow_ratio;
+  let rect49H = imgDrwPrps.height * yellow_ratio;
 
   //第十三行三个
   let rect50X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let rect50Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let rect50W = imgDrwPrps.width * 0.02;
-  let rect50H = imgDrwPrps.height * 0.02;
+  let rect50W = imgDrwPrps.width * yellow_ratio;
+  let rect50H = imgDrwPrps.height * yellow_ratio;
   
   let rect51X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let rect51Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let rect51W = imgDrwPrps.width * 0.02;
-  let rect51H = imgDrwPrps.height * 0.02;
+  let rect51W = imgDrwPrps.width * yellow_ratio;
+  let rect51H = imgDrwPrps.height * yellow_ratio;
 
   let rect52X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect52Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let rect52W = imgDrwPrps.width * 0.02;
-  let rect52H = imgDrwPrps.height * 0.02;
+  let rect52W = imgDrwPrps.width * yellow_ratio;
+  let rect52H = imgDrwPrps.height * yellow_ratio;
 
 
   //固定的交叉处的正方形红色方块
   //第二行两个个
   let rect53X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.025;
   let rect53Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.160;
-  let rect53W = imgDrwPrps.width * 0.02;
-  let rect53H = imgDrwPrps.height * 0.02;
+  let rect53W = imgDrwPrps.width * yellow_ratio;
+  let rect53H = imgDrwPrps.height * yellow_ratio;
   
   let rect54X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let rect54Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.160;
-  let rect54W = imgDrwPrps.width * 0.02;
-  let rect54H = imgDrwPrps.height * 0.02;
+  let rect54W = imgDrwPrps.width * yellow_ratio;
+  let rect54H = imgDrwPrps.height * yellow_ratio;
 
   //第三行三个
   let rect55X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.025;
   let rect55Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect55W = imgDrwPrps.width * 0.02;
-  let rect55H = imgDrwPrps.height * 0.02;
+  let rect55W = imgDrwPrps.width * yellow_ratio;
+  let rect55H = imgDrwPrps.height * yellow_ratio;
 
   let rect56X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let rect56Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect56W = imgDrwPrps.width * 0.02;
-  let rect56H = imgDrwPrps.height * 0.02;
+  let rect56W = imgDrwPrps.width * yellow_ratio;
+  let rect56H = imgDrwPrps.height * yellow_ratio;
 
   let rect57X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.877;
   let rect57Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect57W = imgDrwPrps.width * 0.02;
-  let rect57H = imgDrwPrps.height * 0.02;
+  let rect57W = imgDrwPrps.width * yellow_ratio;
+  let rect57H = imgDrwPrps.height * yellow_ratio;
 
   //第四行四个
   let rect58X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let rect58Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let rect58W = imgDrwPrps.width * 0.02;
-  let rect58H = imgDrwPrps.height * 0.02;
+  let rect58W = imgDrwPrps.width * yellow_ratio;
+  let rect58H = imgDrwPrps.height * yellow_ratio;
 
   let rect59X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect59Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let rect59W = imgDrwPrps.width * 0.02;
-  let rect59H = imgDrwPrps.height * 0.02;
+  let rect59W = imgDrwPrps.width * yellow_ratio;
+  let rect59H = imgDrwPrps.height * yellow_ratio;
 
   let rect60X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.922;
   let rect60Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let rect60W = imgDrwPrps.width * 0.02;
-  let rect60H = imgDrwPrps.height * 0.02;
+  let rect60W = imgDrwPrps.width * yellow_ratio;
+  let rect60H = imgDrwPrps.height * yellow_ratio;
 
   let rect61X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let rect61Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let rect61W = imgDrwPrps.width * 0.02;
-  let rect61H = imgDrwPrps.height * 0.02;
+  let rect61W = imgDrwPrps.width * yellow_ratio;
+  let rect61H = imgDrwPrps.height * yellow_ratio;
 
   //第五行三个
   let rect62X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.647;
   let rect62Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let rect62W = imgDrwPrps.width * 0.02;
-  let rect62H = imgDrwPrps.height * 0.02;
+  let rect62W = imgDrwPrps.width * yellow_ratio;
+  let rect62H = imgDrwPrps.height * yellow_ratio;
   
   let rect63X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect63Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let rect63W = imgDrwPrps.width * 0.02;
-  let rect63H = imgDrwPrps.height * 0.02;
+  let rect63W = imgDrwPrps.width * yellow_ratio;
+  let rect63H = imgDrwPrps.height * yellow_ratio;
   
   let rect64X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let rect64Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let rect64W = imgDrwPrps.width * 0.02;
-  let rect64H = imgDrwPrps.height * 0.02;
+  let rect64W = imgDrwPrps.width * yellow_ratio;
+  let rect64H = imgDrwPrps.height * yellow_ratio;
 
   //第六行三个
   let rect65X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect65Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let rect65W = imgDrwPrps.width * 0.02;
-  let rect65H = imgDrwPrps.height * 0.02;
+  let rect65W = imgDrwPrps.width * yellow_ratio;
+  let rect65H = imgDrwPrps.height * yellow_ratio;
   
   let rect66X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.225;
   let rect66Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let rect66W = imgDrwPrps.width * 0.02;
-  let rect66H = imgDrwPrps.height * 0.02;
+  let rect66W = imgDrwPrps.width * yellow_ratio;
+  let rect66H = imgDrwPrps.height * yellow_ratio;
   
   let rect67X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let rect67Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let rect67W = imgDrwPrps.width * 0.02;
-  let rect67H = imgDrwPrps.height * 0.02;
+  let rect67W = imgDrwPrps.width * yellow_ratio;
+  let rect67H = imgDrwPrps.height * yellow_ratio;
 
   //第七行一个
   let rect68X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect68Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.685;
-  let rect68W = imgDrwPrps.width * 0.02;
-  let rect68H = imgDrwPrps.height * 0.02;
+  let rect68W = imgDrwPrps.width * yellow_ratio;
+  let rect68H = imgDrwPrps.height * yellow_ratio;
 
   //第八行两个
   let rect69X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect69Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.725;
-  let rect69W = imgDrwPrps.width * 0.02;
-  let rect69H = imgDrwPrps.height * 0.02;
+  let rect69W = imgDrwPrps.width * yellow_ratio;
+  let rect69H = imgDrwPrps.height * yellow_ratio;
 
   let rect70X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let rect70Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.725;
-  let rect70W = imgDrwPrps.width * 0.02;
-  let rect70H = imgDrwPrps.height * 0.02;
+  let rect70W = imgDrwPrps.width * yellow_ratio;
+  let rect70H = imgDrwPrps.height * yellow_ratio;
 
   //第九行一个
   let rect71X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect71Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.775;
-  let rect71W = imgDrwPrps.width * 0.02;
-  let rect71H = imgDrwPrps.height * 0.02;
+  let rect71W = imgDrwPrps.width * yellow_ratio;
+  let rect71H = imgDrwPrps.height * yellow_ratio;
 
   //第十行三个
   let rect72X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let rect72Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let rect72W = imgDrwPrps.width * 0.02;
-  let rect72H = imgDrwPrps.height * 0.02;
+  let rect72W = imgDrwPrps.width * yellow_ratio;
+  let rect72H = imgDrwPrps.height * yellow_ratio;
   
   let rect73X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.842;
   let rect73Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let rect73W = imgDrwPrps.width * 0.02;
-  let rect73H = imgDrwPrps.height * 0.02;
+  let rect73W = imgDrwPrps.width * yellow_ratio;
+  let rect73H = imgDrwPrps.height * yellow_ratio;
 
   let rect74X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let rect74Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.850;
-  let rect74W = imgDrwPrps.width * 0.02;
-  let rect74H = imgDrwPrps.height * 0.02;
+  let rect74W = imgDrwPrps.width * yellow_ratio;
+  let rect74H = imgDrwPrps.height * yellow_ratio;
 
   //第十三行两个
   let rect75X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.06;
   let rect75Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let rect75W = imgDrwPrps.width * 0.02;
-  let rect75H = imgDrwPrps.height * 0.02;
+  let rect75W = imgDrwPrps.width * yellow_ratio;
+  let rect75H = imgDrwPrps.height * yellow_ratio;
 
   let rect76X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let rect76Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let rect76W = imgDrwPrps.width * 0.02;
-  let rect76H = imgDrwPrps.height * 0.02;
+  let rect76W = imgDrwPrps.width * yellow_ratio;
+  let rect76H = imgDrwPrps.height * yellow_ratio;
 
   //固定的交叉处的正方形灰色方块
   //第一行一个
   let rect77X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.877;
   let rect77Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.024;
-  let rect77W = imgDrwPrps.width * 0.02;
-  let rect77H = imgDrwPrps.height * 0.02;
+  let rect77W = imgDrwPrps.width * yellow_ratio;
+  let rect77H = imgDrwPrps.height * yellow_ratio;
 
   //第三行三个
   let rect78X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.115;
   let rect78Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect78W = imgDrwPrps.width * 0.02;
-  let rect78H = imgDrwPrps.height * 0.02;
+  let rect78W = imgDrwPrps.width * yellow_ratio;
+  let rect78H = imgDrwPrps.height * yellow_ratio;
 
   let rect79X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.922;
   let rect79Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect79W = imgDrwPrps.width * 0.02;
-  let rect79H = imgDrwPrps.height * 0.02;
+  let rect79W = imgDrwPrps.width * yellow_ratio;
+  let rect79H = imgDrwPrps.height * yellow_ratio;
 
   let rect80X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.962;
   let rect80Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.350;
-  let rect80W = imgDrwPrps.width * 0.02;
-  let rect80H = imgDrwPrps.height * 0.02;
+  let rect80W = imgDrwPrps.width * yellow_ratio;
+  let rect80H = imgDrwPrps.height * yellow_ratio;
   
   //第四行两个
   let rect81X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let rect81Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let rect81W = imgDrwPrps.width * 0.02;
-  let rect81H = imgDrwPrps.height * 0.02;
+  let rect81W = imgDrwPrps.width * yellow_ratio;
+  let rect81H = imgDrwPrps.height * yellow_ratio;
 
   let rect82X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let rect82Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.430;
-  let rect82W = imgDrwPrps.width * 0.02;
-  let rect82H = imgDrwPrps.height * 0.02;
+  let rect82W = imgDrwPrps.width * yellow_ratio;
+  let rect82H = imgDrwPrps.height * yellow_ratio;
 
   //第五行两个
   let rect83X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let rect83Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let rect83W = imgDrwPrps.width * 0.02;
-  let rect83H = imgDrwPrps.height * 0.02;
+  let rect83W = imgDrwPrps.width * yellow_ratio;
+  let rect83H = imgDrwPrps.height * yellow_ratio;
 
   let rect84X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let rect84Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.560;
-  let rect84W = imgDrwPrps.width * 0.02;
-  let rect84H = imgDrwPrps.height * 0.02;
+  let rect84W = imgDrwPrps.width * yellow_ratio;
+  let rect84H = imgDrwPrps.height * yellow_ratio;
 
   //第六行两个
   let rect85X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let rect85Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let rect85W = imgDrwPrps.width * 0.02;
-  let rect85H = imgDrwPrps.height * 0.02;
+  let rect85W = imgDrwPrps.width * yellow_ratio;
+  let rect85H = imgDrwPrps.height * yellow_ratio;
 
   let rect86X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let rect86Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.625;
-  let rect86W = imgDrwPrps.width * 0.02;
-  let rect86H = imgDrwPrps.height * 0.02;
+  let rect86W = imgDrwPrps.width * yellow_ratio;
+  let rect86H = imgDrwPrps.height * yellow_ratio;
 
   //第七行一个
   let rect87X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let rect87Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.725;
-  let rect87W = imgDrwPrps.width * 0.02;
-  let rect87H = imgDrwPrps.height * 0.02;
+  let rect87W = imgDrwPrps.width * yellow_ratio;
+  let rect87H = imgDrwPrps.height * yellow_ratio;
 
   //第十三行两个
   let rect88X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.537;
   let rect88Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let rect88W = imgDrwPrps.width * 0.02;
-  let rect88H = imgDrwPrps.height * 0.02;
+  let rect88W = imgDrwPrps.width * yellow_ratio;
+  let rect88H = imgDrwPrps.height * yellow_ratio;
 
   let rect89X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.577;
   let rect89Y = imgDrwPrps.yOffset + imgDrwPrps.height * 0.940;
-  let rect89W = imgDrwPrps.width * 0.02;
-  let rect89H = imgDrwPrps.height * 0.02;
+  let rect89W = imgDrwPrps.width * yellow_ratio;
+  let rect89H = imgDrwPrps.height * yellow_ratio;
 
   //固定的灰色矩形
   let rect106X = imgDrwPrps.xOffset + imgDrwPrps.width * 0.165;
@@ -3182,72 +3183,72 @@ function clearartwork() {
   for (let i = 0; i < 2; i++) {
     let randX = rect1X + 0;
     let randY = rect1Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect2X + 0;
     let randY = rect2Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect3X + 0;
     let randY = rect3Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect4X + 0;
     let randY = rect4Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect5X + 0;
     let randY = rect5Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect6X + 0;
     let randY = rect6Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect12X + 0;
     let randY = rect12Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect11X + 0;
     let randY = rect11Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect17X +0;
     let randY = rect17Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
@@ -3309,40 +3310,40 @@ function clearartwork() {
   for (let i = 0; i < 3; i++) {
     let randX = rect1X + 0;
     let randY = rect1Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect4X + 0;
     let randY = rect4Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect6X + 0;
     let randY = rect6Y +0
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect9X + 0;
     let randY = rect9Y +0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect19X +0;
     let randY = rect19Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
@@ -3394,64 +3395,64 @@ function clearartwork() {
   for (let i = 0; i < 3; i++) {
     let randX = rect1X + 0;
     let randY = rect1Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 3; i++) {
     let randX = rect2X + 0;
     let randY = rect2Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect2X + 0;
     let randY = rect2Y +0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect3X + 0;
     let randY = rect3Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect9X + 0;
     let randY = rect9Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect15X +0;
     let randY = rect15Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 2; i++) {
     let randX = rect18X +0;
     let randY = rect18Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
   for (let i = 0; i < 1; i++) {
     let randX = rect19X +0;
     let randY = rect19Y + 0;
-    let randW = imgDrwPrps.width * 0.02;
-    let randH = imgDrwPrps.height * 0.02;
+    let randW = imgDrwPrps.width * yellow_ratio;
+    let randH = imgDrwPrps.height * yellow_ratio;
     rect(randX, randY, randW, randH);
   }
 
