@@ -7,6 +7,8 @@ On the page '2', you can increase or decrease the width of the rectangle lines b
 
 On page '3', mouse actions are available. Keep pressing the left key of mouse to rotate and pressing right key to transform it. Zoom in and out are also available if you scroll your roller. You can also press the up or down arrow keys to increase or decrease the width of the element.
 
+On page 'space', the artwork on page '3' will decompose into many cubes.
+
 ## Individual approach
 Based on the group project, I developed 3D dynamic effects. 
 
