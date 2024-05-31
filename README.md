@@ -9,7 +9,7 @@ On page '3', mouse actions are available. Keep pressing the left key of mouse to
 
 On page 'space', the artwork on page '3' will decompose into many cubes.
 
-## Individual approach
+## Individual Approach
 Based on the group project, I developed 3D dynamic effects. 
 
 If you press key "2", it will switch to a 2D plane state where squares and small squares simulate the fast flow and jitter of vehicles. In this state, pressing the "up" or "down" arrow keys will increase or decrease the width of the shapes, while pressing the "left" and "right" arrow keys will change their color. 
@@ -29,7 +29,7 @@ Evolution of Caterpie
 ![Poster of The Maze Runner](image-1.png)
 Poster of The Maze Runner
 
-## Technical explanation
+## Technical Explanation
 The spiral upward movement on the initial page is inspired by the ["Sine Cosine in 3D"](https://p5js.org/examples/3d-sine-cosine-in-3d.html) page in ['P5.js'](https://p5js.org/). The background is adapted based on my team member's work. The fading effect is achieved by overlaying a layer with gradually decreasing opacity. As the frame count increases, the opacity decreases, eventually covering the entire base to create a sense of gradual disappearance. 
 
 On the page ‘2’, the method to increase the width of the rectangles is because I set the initial ratio to 0.02. If you press the left arrow key, it decreases by 0.01, and if you press the right arrow key, it increases by 0.01. The range from the minimum to the maximum value is from 0.001 to 0.01. The method to change the color is that I created an array containing eight colors and set the initial color value to zero. This value increases or decreases as the left or right arrow key is pressed, but it can only be between zero and three.
