@@ -9,7 +9,7 @@ On page '2', you can increase, decrease the width and hight of the artwork by pr
 Based on the group project, I developed 3D dynamic effects. If you press key 2, it will switch to a 2D plane state where squares and small squares simulate the fast flow and jitter of vehicles. In this state, pressing the up or down arrow keys will increase or decrease the height of the shapes, while pressing the left and right arrow keys will increase or decrease their width. If you press key 3, you will get a 3D shape. By pressing the left mouse button, you can freely rotate the shape to view its details; by holding the right mouse button, you can pan the shape; and by scrolling the mouse wheel, you can zoom in or out. Pressing key C will return you to the initial page.
 
 ## inspiration
-
+My inspiration comes from the evolution of Digimon and the movie "Maze Runner". I feel that the fragmented sense of Digimon's evolution is exactly what I expect from this artwork. I think that by using a spiral-upward style and feeling, I can enhance the three-dimensional aspect of this artwork. Additionally, because this artwork is based on a basic square or pixel style, it also corresponds well to the feeling of the digital world depicted in the Digimon series.
 
 ## technical explanation
 
