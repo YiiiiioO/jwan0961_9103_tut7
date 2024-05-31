@@ -153,7 +153,6 @@ function keyPressed(){
     colorindex = constrain(colorindex, 0, 3);
   }
 
-
   if (key === "3") {
     loop();
     calculateCanvasProps();
