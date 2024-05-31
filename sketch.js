@@ -6,12 +6,17 @@ let run2D = true;
 let run3D = false;
 let clearall = false;
 let elementcolors = [
-  [219, 217, 213], // grey
-  [75, 107, 186], // blue
+  [75, 107, 186],  // blue
   [230, 207, 48], // yellow
-  [173, 58, 47] // yellow
+  [173, 58, 47], // red
+  [219, 217, 213], // grey
+  [75, 107, 186],  // blue
+  [230, 207, 48], // yellow
+  [173, 58, 47], // red
+  [219, 217, 213], // grey
 ];
-let yellow_ratio = 0.2
+let yellow_ratio = 0.02
+let colorindex = 0;
 
 
 function setup() {
@@ -119,29 +124,37 @@ function drawInstructions(){
 
 function keyPressed(){
   if (keyCode == UP_ARROW) {
-    imgDrwPrps.height += 50;
-    imgDrwPrps.height = constrain(imgDrwPrps.height, windowHeight/2, windowHeight) 
+    yellow_ratio += 0.01;
+    yellow_ratio  = constrain(yellow_ratio, 0.001,0.1)
+    // imgDrwPrps.height += 50;
+    // imgDrwPrps.height = constrain(imgDrwPrps.height, windowHeight/2, windowHeight) 
       // maxLineLength += 5;
       // maxLineLength = constrain(maxLineLength, 2, drawWidth/2);
   }
 
   if (keyCode == DOWN_ARROW) {
-    imgDrwPrps.height -= 50;
-    imgDrwPrps.height = constrain(imgDrwPrps.height, windowHeight/2, windowHeight) 
+    yellow_ratio -= 0.01;
+    yellow_ratio  = constrain(yellow_ratio, 0.001,0.08)
+    // imgDrwPrps.height -= 50;
+    // imgDrwPrps.height = constrain(imgDrwPrps.height, windowHeight/2, windowHeight) 
       // maxLineLength -= 5;
       // maxLineLength = constrain(maxLineLength, 2, drawWidth/2);
   }
 
   if (keyCode == LEFT_ARROW) {
-    imgDrwPrps.width -= 50;
-    imgDrwPrps.width = constrain(imgDrwPrps.width, windowWidth/2, windowWidth) 
+    colorindex -= 1;
+    colorindex = constrain(colorindex, 0, 3);
+    // imgDrwPrps.width -= 50;
+    // imgDrwPrps.width = constrain(imgDrwPrps.width, windowWidth/2, windowWidth) 
       // lineWeight -= 1;22
       // lineWeight = constrain(lineWeight, 1, 10);
   }
   
   if (keyCode == RIGHT_ARROW) {
-    imgDrwPrps.width += 50;
-    imgDrwPrps.width = constrain(imgDrwPrps.width, windowWidth/2, windowWidth) 
+    colorindex += 1;
+    colorindex = constrain(colorindex, 0, 3);
+    // imgDrwPrps.width += 50;
+    // imgDrwPrps.width = constrain(imgDrwPrps.width, windowWidth/2, windowWidth) 
       // lineWeight += 1;
       // lineWeight = constrain(lineWeight, 1, 10);
   }
@@ -2007,10 +2020,13 @@ function artwork() {
   let rect119H = imgDrwPrps.height * 0.035;
 
   // 绘制色块
-  fill(75, 107, 186); // 蓝色，图层
+ 
+  fill(elementcolors[colorindex][0], elementcolors[colorindex][1], elementcolors[colorindex][2]); // first color- blue
   rect(rect113X, rect113Y, rect113W, rect113H);
 
-  fill(230, 207, 48); // 黄色
+ 
+  fill(elementcolors[colorindex+1][0], elementcolors[colorindex+1][1], elementcolors[colorindex+1][2]); // second color - yellow
+
   //横着的固定黄色矩形线条
   rect(rect1X, rect1Y, rect1W, rect1H);
   rect(rect2X, rect2Y, rect2W, rect2H);
@@ -2047,7 +2063,9 @@ function artwork() {
   rect(rect102X, rect102Y, rect102W, rect102H);
   rect(rect103X, rect103Y, rect103W, rect103H);
 
-  fill(173, 58, 47); // 红色
+ 
+  fill(elementcolors[colorindex+2][0], elementcolors[colorindex+2][1], elementcolors[colorindex+2][2]); // third color - red
+
   //第二行两个个
   rect(rect53X, rect53Y, rect53W, rect53H);
   rect(rect54X, rect54Y, rect54W, rect54H);
@@ -2177,7 +2195,8 @@ function artwork() {
     rect(randX, randY, randW, randH);
   }
 
-  fill(75, 107, 186); // 蓝色
+ 
+  fill(elementcolors[colorindex][0], elementcolors[colorindex][1], elementcolors[colorindex][2]); // first color - blue
   //第一行三个
   rect(rect26X, rect26Y, rect26W, rect26H);
   rect(rect27X, rect27Y, rect27W, rect27H);
@@ -2274,10 +2293,12 @@ function artwork() {
 
 
   
-  fill(173, 58, 47); // 红色，图层转换
+ 
+  fill(elementcolors[colorindex+2][0], elementcolors[colorindex+2][1], elementcolors[colorindex+2][2]); // third color - red
   rect(rect95X, rect95Y, rect95W, rect95H);
 
-  fill(219, 217, 213); // 灰色
+ 
+  fill(elementcolors[colorindex+3][0], elementcolors[colorindex+3][1], elementcolors[colorindex+3][2]); // 4th color - grey
   //第一行一个
   rect(rect77X, rect77Y, rect77W, rect77H);
 
@@ -2383,7 +2404,8 @@ function artwork() {
 
 
 
-  fill(230, 207, 48); // 黄色,图层转换
+ 
+  fill(elementcolors[colorindex+1][0], elementcolors[colorindex+1][1], elementcolors[colorindex+1][2]); // second color - yellow
   //固定的黄色矩形
   rect(rect104X, rect104Y, rect104W, rect104H);
   rect(rect105X, rect105Y, rect105W, rect105H);
@@ -2391,7 +2413,8 @@ function artwork() {
   //移动的黄色矩形
   rect(rect110X, rect110Y, rect110W, rect110H);
 
-  fill(75, 107, 186); // 蓝色，图层转换
+ 
+  fill(elementcolors[colorindex][0], elementcolors[colorindex][1], elementcolors[colorindex][2]); // first color - blue
   rect(rect114X, rect114Y, rect114W, rect114H);
 
   
