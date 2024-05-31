@@ -1,10 +1,11 @@
 let imgDrwPrps = {aspect: 0, width: 0, height: 0, xOffset: 0, yOffset: 0};
 let canvasAspectRatio = 0;
-let numRandomthreeDRects; // 黄色线条上的矩形的数量
+let numRandomthreeDRects; // number of random cube 
 let cam;
-let run2D = true;
+let run2D = false;
 let run3D = false;
-let clearall = false;
+let clearall = true;
+let breakindex = false;
 let elementcolors = [
   [75, 107, 186],  // blue
   [230, 207, 48], // yellow
@@ -17,78 +18,97 @@ let elementcolors = [
 ];
 let yellow_ratio = 0.02
 let colorindex = 0;
+let cubes = [];
 
 
+
+// setup
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   calculateCanvasProps();
-  cam = createCamera();
-  // cam.setPosition(0, 0, 0);
-  // cam.setPosition(0, 0, -(windowHeight/2)/tan(PI/6));
-  // cam.lookAt(0,0,0);
-  // rotateZ(90);
-  // frameRate(10)
+  cam = createCamera();   // set up camera vie
+
+  // Generate 100 random cubes
+  for (let i = 0; i < 100; i++) {
+    let selectedColor = random(elementcolors);
+    let cube = {
+      x: random(-500, 500),
+      y: random(-500, 500),
+      z: random(-500, 500),
+      size: random(20, 50),
+      c1: selectedColor[0], 
+      c2: selectedColor[1], 
+      c3: selectedColor[2]
+    };
+    cubes.push(cube);
+  }
 
 }
 
-function draw() {
-  background(240, 240, 240); // 背景颜色
-  // rotateY(frameCount * 0.003);
-  // newthreeDrect(0,0,10,10)
-  // artwork()
-  if (run2D){
-    // loop();
-    // fill('yellow')
-    // newrect(0,0,30,30)
 
-    // // 嘻哈镜效果
-    // let shearAmountX = map(mouseX, 0, width, -PI / 4, PI / 4);
-    // let shearAmountY = map(mouseY, 0, height, -PI / 4, PI / 4);
-    
-    // applyMatrix(1, tan(shearAmountY), tan(shearAmountX), 1, 0, 0);
+
+// draw
+function draw() {
+  background(240, 240, 240); // background
+  
+  // if 2 is pressed
+  if (run2D){
     loop();
     artwork();
-    
   }
+
+  // if 3 is pressed
   if (run3D){
-    // cam.setPosition(windowWidth, windowHeight, (windowHeight,/2)/tan(PI/6));
-    threeDartwork();
-    //drag to move the world.
     orbitControl();
     loop();
+    threeDartwork();
   }
+
+  // if space is pressed
+  if (breakindex){
+    background(240, 240, 240); 
+    orbitControl();
+    loop();
+    for (let cube of cubes) {
+      push();
+      translate(cube.x, cube.y, cube.z);
+      noStroke(); 
+      fill(cube.c1, cube.c2, cube.c3)
+      box(cube.size);
+      pop();
+    }
+  }
+  
+  // if c is pressed
   if (clearall){
     loop();
-    newrect(0,0,5,5)
-    rotateX(45);
+    newrect(0,0,5,5)  // create sin and cos 
+    rotateX(45);      // rotate plane
     clearartwork();
-
-    // transparent
-    // customFrameCount = min(customFrameCount, 250);
+    
+    // create a blur background
     fill(240, 240, 240, frameCount*1);
     depth = 100;
     box(windowWidth*2, windowHeight*2, depth);
-    // if (customFrameCount < 150) {
-    //   customFrameCount++;
-    // }
   }
 
-  
-
-  
 }
 
+ 
 
+// resize window
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   calculateCanvasProps();
-  redraw(); // 重新绘制画布
+  redraw(); 
 }
 
+
+
+// calculate canvas width and height ratio
 function calculateCanvasProps() {
   // Calculate the aspect ratio of the canvas
   canvasAspectRatio = windowWidth / windowHeight;
-  
   // Set imgDrwPrps to match the window aspect ratio
   if (canvasAspectRatio >= 1) {
     // Landscape or square
@@ -106,95 +126,65 @@ function calculateCanvasProps() {
 }
 
 
-
-
-function drawInstructions(){
-  //draw a rectangle as a big for the text
-  fill(0);
-  noStroke();
-  rect(0, drawHeight, drawWidth, height - drawHeight);
-
-  //draw some text with the instructions
-  fill(255);
-  text(`Press the up or down arrows to change the man line length. Current max line length: ${maxLineLength}`, 10, drawHeight + 20);
-  text(`Press left or right to change weight. Current weight: ${lineWeight}`, 10, drawHeight + 40);
-  text(`Press 'c' to clear the canvas`, 10, drawHeight + 60);
-}
-
-
+// define key press
 function keyPressed(){
+
+  // increase width
   if (keyCode == UP_ARROW) {
     yellow_ratio += 0.01;
     yellow_ratio  = constrain(yellow_ratio, 0.001,0.1)
-    // imgDrwPrps.height += 50;
-    // imgDrwPrps.height = constrain(imgDrwPrps.height, windowHeight/2, windowHeight) 
-      // maxLineLength += 5;
-      // maxLineLength = constrain(maxLineLength, 2, drawWidth/2);
   }
 
+  // decrease width
   if (keyCode == DOWN_ARROW) {
     yellow_ratio -= 0.01;
     yellow_ratio  = constrain(yellow_ratio, 0.001,0.08)
-    // imgDrwPrps.height -= 50;
-    // imgDrwPrps.height = constrain(imgDrwPrps.height, windowHeight/2, windowHeight) 
-      // maxLineLength -= 5;
-      // maxLineLength = constrain(maxLineLength, 2, drawWidth/2);
   }
-
+  
+  // change color
   if (keyCode == LEFT_ARROW) {
     colorindex -= 1;
     colorindex = constrain(colorindex, 0, 3);
-    // imgDrwPrps.width -= 50;
-    // imgDrwPrps.width = constrain(imgDrwPrps.width, windowWidth/2, windowWidth) 
-      // lineWeight -= 1;22
-      // lineWeight = constrain(lineWeight, 1, 10);
   }
   
+  // change color
   if (keyCode == RIGHT_ARROW) {
     colorindex += 1;
     colorindex = constrain(colorindex, 0, 3);
-    // imgDrwPrps.width += 50;
-    // imgDrwPrps.width = constrain(imgDrwPrps.width, windowWidth/2, windowWidth) 
-      // lineWeight += 1;
-      // lineWeight = constrain(lineWeight, 1, 10);
   }
-  //if the key is c we clear the canvas
+
+
   if (key === "3") {
     loop();
     calculateCanvasProps();
     cam = createCamera();
-    run3D = true;
+    run3D = true;                     // switch to 3d view
     run2D = false;
     clearall = false;
+    breakindex = false;
   } else if (key === "2") {
     noLoop();
     run2D = true;
-    run3D = false;
+    run3D = false;                    // switch to 2d view
     clearall = false;
+    breakindex = false;
     calculateCanvasProps();
     cam = createCamera();
   } else if (key === "c") {
-    // loop();
     run2D = false;
     run3D = false;
-    clearall = true;
-    // customFrameCount = 0;
-    // calculateCanvasProps();
-    // cam = createCamera();
+    clearall = true; 
+    breakindex = false;                 // back to beginning
+  } else if (key === " ") {
+    run2D = false;
+    run3D = false;
+    clearall = false;
+    breakindex = true;                //break everything
   }
-  // drawInstructions();
 }
 
-// xuanzhuan
+// sin and cos vortex
 function newrect(x,y,w,h) {
-
-    // strokeWeight(10);
-    // stroke('black')
-    // rotateX(45);
-    // rotateY(frameCount*0.005);
-    
-
-
     for (let j = 0; j < 5; j++) {
         push();
         for (let i = 0; i < 80; i++) {
@@ -205,14 +195,9 @@ function newrect(x,y,w,h) {
           );
           rotateZ(frameCount * 0.005);
           push();
-          // strokeWidth(2)
-          // sphere(8, 6, 4);
           let selectedColor = random(elementcolors);
           fill(selectedColor[0], selectedColor[1], selectedColor[2])
-          // circle(0,0,10)
-          // rect(0,0,20,20)
           box(10,10,10)
-  
           pop();
         }
         pop();
@@ -223,9 +208,11 @@ function newrect(x,y,w,h) {
 
 // =========================================================================
 // =========================================================================
-// ===============================3D========================================
+// ===============================3D view ========================================
 // =========================================================================
 // =========================================================================
+
+// general 3d box
 function threeDrect(x, y, w, h){
   push();
   translate(x+w/2,y+h/2)
@@ -236,6 +223,7 @@ function threeDrect(x, y, w, h){
   pop();
 }
 
+// for yellow box
 function threeDrecty(x, y, w, h){
   push();
   translate(x+w/2,y+h/2)
@@ -246,6 +234,7 @@ function threeDrecty(x, y, w, h){
   pop();
 }
 
+// for blue box
 function threeDrectb(x, y, w, h){
   push();
   translate(x+w/2,y+h/2)
@@ -256,6 +245,7 @@ function threeDrectb(x, y, w, h){
   pop();
 }
 
+// for red box
 function threeDrectr(x, y, w, h){
   push();
   translate(x+w/2,y+h/2)
@@ -266,6 +256,7 @@ function threeDrectr(x, y, w, h){
   pop();
 }
 
+// for grey box
 function threeDrectg(x, y, w, h){
   push();
   translate(x+w/2,y+h/2)
@@ -276,14 +267,13 @@ function threeDrectg(x, y, w, h){
   pop();
 }
 
+
+// create 3d view
 function threeDartwork() {
-  // background(240, 240, 240); // 背景颜色
 
-
-  noStroke(); // 禁用边框边线
+  noStroke(); 
 
   translate(-windowWidth/2, -windowHeight/2)
-
 
   // 计算相对位置和大小
   // Y轴开始从上到下的黄色线条矩形
@@ -1333,16 +1323,6 @@ function threeDartwork() {
   threeDrect(threeDrect114X, threeDrect114Y, threeDrect114W, threeDrect114H);
 
   
-  /*// 设置描边 这个是给图画描边的方法
-  stroke(0); // 黑色描边
-  strokeWeight(2); // 描边宽度
-  noFill();
-  threeDrect(imgDrwPrps.xOffset, imgDrwPrps.yOffset, imgDrwPrps.width, imgDrwPrps.height);*/
-
-  //两侧填充黑色的方法
-  // fill(0, 0, 0);
-  // threeDrect(0, 0, imgDrwPrps.xOffset, height); // 左侧黑色填充
-  // threeDrect(imgDrwPrps.xOffset + imgDrwPrps.width, 0, width - (imgDrwPrps.xOffset + imgDrwPrps.width), height); // 右侧黑色填充
 }
 
 
@@ -1350,14 +1330,14 @@ function threeDartwork() {
 //========================================================================
 // =========================================================================
 // =========================================================================
-// ===============================2D========================================
+// ===============================2D view========================================
 // =========================================================================
 // =========================================================================
 
 function artwork() {
 
 
-  noStroke(); // 禁用边框边线
+  noStroke(); 
   translate(-windowWidth/2, -windowHeight/2)
 
   // 计算相对位置和大小
@@ -2418,16 +2398,7 @@ function artwork() {
   rect(rect114X, rect114Y, rect114W, rect114H);
 
   
-  /*// 设置描边 这个是给图画描边的方法
-  stroke(0); // 黑色描边
-  strokeWeight(2); // 描边宽度
-  noFill();
-  rect(imgDrwPrps.xOffset, imgDrwPrps.yOffset, imgDrwPrps.width, imgDrwPrps.height);*/
-
-  //两侧填充黑色的方法
-  // fill(0, 0, 0);
-  // rect(0, 0, imgDrwPrps.xOffset, height); // 左侧黑色填充
-  // rect(imgDrwPrps.xOffset + imgDrwPrps.width, 0, width - (imgDrwPrps.xOffset + imgDrwPrps.width), height); // 右侧黑色填充
+  
 }
 
 
@@ -2435,14 +2406,13 @@ function artwork() {
 //========================================================================
 // =========================================================================
 // =========================================================================
-// ===============================clear========================================
+// ===============================sin and cos vortex========================================
 // =========================================================================
 // =========================================================================
 
 function clearartwork() {
 
-
-  noStroke(); // 禁用边框边线
+  noStroke(); 
   translate(-windowWidth/2, -windowHeight/2)
 
   // 计算相对位置和大小
@@ -3492,14 +3462,6 @@ function clearartwork() {
   fill(75, 107, 186); // 蓝色，图层转换
   rect(rect114X, rect114Y, rect114W, rect114H);
 
-  
-  // // transparent
-  // fill(240, 240, 240, frameCount*2);
-  // // rect(0,0,windowWidth, windowHeight);
-
-  // push();
-  // depth = 100;
-  // box(windowWidth*2, windowHeight*2, depth);
-  // pop();
+ 
 
 }
